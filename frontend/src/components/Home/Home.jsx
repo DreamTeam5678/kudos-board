@@ -4,6 +4,7 @@ import BoardGrid from "../BoardGrid/BoardGrid";
 import BoardCard from "../BoardCard/BoardCard";
 import axios from "axios";
 import "./Home.css";
+import Footer from "../Footer/Footer";
 
 const Home = () => {
     const [boards, setBoards] = useState([]);
