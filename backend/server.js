@@ -24,3 +24,18 @@ app.get('/api/boards', async (req, res) => {
     res.status(500).json({ error: "Failed to fetch boards" });
   }
 });
+
+app.get('/api/boards/:id', async (req, res) => {
+  const { id } = req.params;
+  try {
+    const board = await prisma.board.findUnique({
+      where: { id: parseInt(id) },
+      include: { cards: true },
+    });
+    res.json(board);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "Board not found" });
+  }
+});
+

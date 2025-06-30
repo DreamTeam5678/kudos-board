@@ -1,32 +1,35 @@
 // src/components/BoardPage.jsx
+import {useParams} from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import "./BoardPage.css";
 
-import React, { useState } from "react";
 
 const GIPHY_API_KEY = "jKqO4xyMXqOJhKNVdfYCwohtHEj1q255"; // my key  from https://developers.giphy.com/dashboard/// Public beta key
 
 const BoardPage = () => {
-  const [cards, setCards] = useState([
-    {
-      id: 1,
-      message: "You rock!",
-      gifUrl: "https://media.giphy.com/media/l0MYGb1LuZ3n7dRnO/giphy.gif",
-      upvotes: 3,
-      author: "Lauritz",
-    },
-    {
-      id: 2,
-      message: "Great job!",
-      gifUrl: "https://media.giphy.com/media/111ebonMs90YLu/giphy.gif",
-      upvotes: 5,
-      author: "Team Bot",
-    },
-  ]);
-
+  const { id } = useParams();
+  const [board, setBoard] = useState(null);
+  const [cards, setCards] = useState([]);
   const [message, setMessage] = useState("");
   const [author, setAuthor] = useState("");
   const [gifSearch, setGifSearch] = useState("");
   const [gifResults, setGifResults] = useState([]);
   const [selectedGif, setSelectedGif] = useState(null);
+
+
+  useEffect(() => {
+    const fetchBoard = async () => {
+      try{
+        const res = await fetch(`http://localhost:3000/api/boards/${id}`);
+        const json = await res.json();
+        setBoard(json);
+        setCards(json.cards || []);
+      } catch (error) {
+        console.error("Error fetching board:", error);
+      }
+    };
+    fetchBoard();
+  }, [id]);
 
   const handleUpvote = (cardId) => {
     const updated = cards.map((card) =>
@@ -70,7 +73,8 @@ const BoardPage = () => {
 
   return (
     <div>
-      <h1>Board Page</h1>
+      <h1>{board?.title || "Board Page"}</h1>
+
 
       {/* === Add New Card Form === */}
       <form onSubmit={handleAddCard} style={{ marginBottom: "2rem" }}>
