@@ -1,0 +1,140 @@
+/* Header.css */
+
+.header {
+  width: 100%;
+  max-width: 700px;
+  margin: 2rem auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: none;
+  border: none;
+  box-shadow: none;
+}
+
+.logo-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #1c1c1c;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.search-container {
+  position: relative;
+  width: 100%;
+  max-width: 350px;
+  margin-top: 0.5rem;
+}
+
+.search-container input {
+  width: 100%;
+  padding: 0.5rem 1rem 0.5rem 2.5rem;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  background-color: #f1f5ff;
+  font-size: 0.95rem;
+}
+
+.search-icon {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  color: #4c5a72;
+}
+
+/* Category Buttons */
+
+.category-buttons {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.category-button {
+  padding: 0.4rem 0.9rem;
+  border-radius: 20px;
+  background-color: #f0f0f0;
+  border: none;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.category-button:hover,
+.category-button.active {
+  background-color: #c7d2fe;
+  color: #1c1c1c;
+  font-weight: 500;
+}
+
+/* Create New Board */
+
+.create-board {
+  margin-top: 1rem;
+}
+
+.create-board-button {
+  padding: 0.6rem 1.2rem;
+  font-size: 0.95rem;
+  border-radius: 12px;
+  background-color: #e0ebff;
+  border: 2px dashed #5571c3;
+  color: #1c1c1c;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.create-board-button:hover {
+  background-color: #d0ddf7;
+}
+.search-bar-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.search-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-container input {
+  padding: 8px 8px 8px 30px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  width: 250px;
+  background-color: #eef3ff;
+}
+
+.search-icon {
+  position: absolute;
+  left: 8px;
+  color: #888;
+}
+
+.search-button,
+.clear-button {
+  padding: 8px 12px;
+  background-color: #26408b;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.search-button:hover,
+.clear-button:hover {
+  background-color: #1a2e6a;
+}

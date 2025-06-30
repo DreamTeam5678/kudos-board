@@ -1,34 +1,60 @@
 import React from "react";
 import "./Header.css";
+import { FaSearch, FaTimes } from "react-icons/fa";
 
-const Header = ({searchQuery, setSearchQuery, selectedCategory, setSelectedCategory}) => {
-    const handleSearchChange = (event) => setSearchQuery(event.target.value);
-    const handleCategoryChange = (event) => setSelectedCategory(event.target.value);
+const categories = [
+  { label: "All", value: "all" },
+  { label: "Celebration", value: "celebration" },
+  { label: "Thank You", value: "thank-you" },
+  { label: "Inspiration", value: "inspiration" },
+  { label: "Recent", value: "recent" }
+];
 
 
-    return(
-        <header className = "header">
-            <div class name = "logo">
-                Kudos Board
-            </div>
-            <div className = "filters">
-                <select value = {selectedCategory} onChange = {handleCategoryChange}>
-                    <option value = "all">All</option>
-                    <option value = "good">Good</option>
-                    <option value = "bad">Bad</option>
-                    <option value = "ugly">Ugly</option>
-                    <option value = "ok">Ok</option>
-                </select>
-            </div>
-            <div className = "search">
-                <input type = "text"
-                placeholder="Search"
-                value={searchQuery}
-                onChange={handleSearchChange}
-                />
-            </div>
-        </header>
-    );
-}
+const Header = ({ searchQuery, setSearchQuery, selectedCategory, setSelectedCategory }) => {
+  const handleClear = () => setSearchQuery("");
+
+  return (
+    <header className="header">
+      <h1 className="logo-text">Kudos<br />Board</h1>
+
+      <div className="search-bar-wrapper">
+        <div className="search-container">
+          <FaSearch className="search-icon" />
+          <input
+            type="text"
+            placeholder="Search"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+          />
+        </div>
+        <button className = "search-button" onClick={() => setSearchQuery(searchQuery)}>
+            Search
+        </button>
+        {searchQuery && (
+            <button className="clear-button" onClick={() => setSearchQuery("")}>
+              Clear
+            </button>
+          )}
+        </div>
+     
+      <div className="category-buttons">
+        {categories.map((cat) => (
+          <button
+            key={cat.value}
+            className={`category-button ${selectedCategory === cat.value ? "active" : ""}`}
+            onClick={() => setSelectedCategory(cat.value)}
+          >
+            {cat.label}
+          </button>
+        ))}
+      </div>
+
+      <div className="create-board">
+        <button className="create-board-button">+ Create New Board</button>
+      </div>
+    </header>
+  );
+};
 
 export default Header;
