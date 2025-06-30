@@ -1,0 +1,82 @@
+{
+    "boards": [
+        {
+            "id": 1,
+            "title": "Kudos Board",
+            "description": "Kudos Board is a place where you can share your appreciation for the things you love.",
+            "image": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+            "cards" : [
+                {
+                    "id": 1,
+                    "title": "Kudos Card",
+                    "description": "Kudos Card is a place where you can share your appreciation for the things you love. It's a great way to show your gratitude and let others know how much you appreciate them.",
+                    "image": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+                },
+                {
+                    "id": 2,
+                    "title": "Kudos Card",
+                    "description": "Kudos Card is a place where you can share your appreciation for the things you love. It's a great way to show your gratitude and let others know how much you appreciate them.",
+                    "image": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+                },
+                {
+                    "id": 3,
+                    "title": "Kudos Card",
+                    "description": "Kudos Card is a place where you can share your appreciation for the things you love. It's a great way to show your gratitude and let others know how much you appreciate them.",
+                    "image": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Kudos Board",
+            "description": "Kudos Board is a place where you can share your appreciation for the things you love. It's a great way to show your gratitude and let others know how much you appreciate them.",
+            "image": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+            "cards" : [
+                {
+                    "id": 1,
+                    "title": "Kudos Card",
+                    "description": "Kudos Card is a place where you can share your appreciation for the things you love. It's a great way to show your gratitude and let others know how much you appreciate them.",
+                    "image": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+                },
+                {
+                    "id": 2,
+                    "title": "Kudos Card",
+                    "description": "Kudos Card is a place where you can share your appreciation for the things you love. It's a great way to show your gratitude and let others know how much you appreciate them.",
+                    "image": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+                },
+                {
+                    "id": 3,
+                    "title": "Kudos Card",
+                    "description": "Kudos Card is a place where you can share your appreciation for the things you love. It's a great way to show your gratitude and let others know how much you appreciate them.",
+                    "image": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Kudos Board",
+            "description": "Kudos Board is a place where you can share your appreciation for the things you love. It's a great way to show your gratitude and let others know how much you appreciate them.",
+            "image": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+            "cards" : [
+                {
+                    "id": 1,
+                    "title": "Kudos Card",
+                    "description": "Kudos Card is a place where you can share your appreciation for the things you love. It's a great way to show your gratitude and let others know how much you appreciate them.",
+                    "image": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+                },
+                {
+                    "id": 2,
+                    "title": "Kudos Card",
+                    "description": "Kudos Card is a place where you can share your appreciation for the things you love. It's a great way to show your gratitude and let others know how much you appreciate them.",
+                    "image": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+                },
+                {
+                    "id": 3,
+                    "title": "Kudos Card",
+                    "description": "Kudos Card is a place where you can share your appreciation for the things you love. It's a great way to show your gratitude and let others know how much you appreciate them.",
+                    "image": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+                }
+            ]
+        }
+    ]       
+}

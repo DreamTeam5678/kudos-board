@@ -4,22 +4,19 @@ import { Link } from 'react-router-dom';
 import BoardCard from '../BoardCard/BoardCard';
 
 
-function BoardGrid(props) {
+function BoardGrid(boards = []) {
     return (
 
         <div className="board-grid">
-            {props.boardData.map((board) => (
+            {boards.map((board) => (
                 <BoardCard 
-                    key={board.id}
-                    id={board.id}
-                    title={board.title}
-                    description={board.description}
-                    image={board.image}
+                    key={board.id}  
+                    board={board}
                 />
             ))}
         </div>
 
-        
+
     );
 }
 

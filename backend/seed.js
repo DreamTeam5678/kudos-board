@@ -1,0 +1,38 @@
+const { PrismaClient } = require('./generated/prisma');
+const prisma = new PrismaClient();
+const fs = require('fs');
+
+async function main() {
+  const data = fs.readFileSync('../data/boards.json', 'utf8');
+  const boards = JSON.parse(data);
+
+  for (const board of boards.boards) {
+    const newBoard = await prisma.board.create({
+      data: {
+        title: board.title,
+        description: board.description,
+        image: board.image,
+      },
+    });
+
+    for (const card of board.cards) {
+      await prisma.card.create({
+        data: {
+          title: card.title,
+          description: card.description,
+          image: card.image,
+          boardId: newBoard.id,
+        },
+      });
+    }
+  }
+}
+
+main()
+  .catch((e) => {
+    console.error(e);
+    process.exit(1);
+  })
+  .finally(async () => {
+    await prisma.$disconnect();
+  });           
