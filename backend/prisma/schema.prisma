@@ -14,24 +14,27 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-
 model Board {
-  id        Int      @id @default(autoincrement())
-  title     String
+  id          Int      @id @default(autoincrement())
+  title       String
   description String
-  image     String
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  cards     Card[]
+  image       String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  cards       Card[]
+  User        User?    @relation(fields: [userId], references: [id])
+  userId      Int?
 }
 
 model Card {
-  id        Int      @id @default(autoincrement())
-  title     String
+  id          Int      @id @default(autoincrement())
+  title       String
   description String
-  image     String
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  image       String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  Board       Board?   @relation(fields: [boardId], references: [id])
+  boardId     Int?
 }
 
 model User {
@@ -41,4 +44,4 @@ model User {
   boards    Board[]
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-} 
+}
