@@ -11,7 +11,7 @@ const categories = [
 ];
 
 
-const Header = ({ searchQuery, setSearchQuery, selectedCategory, setSelectedCategory }) => {
+const Header = ({ searchQuery, setSearchQuery, selectedCategory, setSelectedCategory, onCreateClick }) => {
   const handleClear = () => setSearchQuery("");
 
   return (
@@ -51,7 +51,9 @@ const Header = ({ searchQuery, setSearchQuery, selectedCategory, setSelectedCate
       </div>
 
       <div className="create-board">
-        <button className="create-board-button">+ Create New Board</button>
+        <button className="create-board-button" onClick={onCreateClick} > 
+            + Create New Board
+        </button>
       </div>
     </header>
   );

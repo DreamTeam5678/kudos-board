@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import BoardCard from '../BoardCard/BoardCard';
 
 
-function BoardGrid(boards = []) {
+function BoardGrid({boards = []}) {
     return (
 
         <div className="board-grid">

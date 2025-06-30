@@ -18,6 +18,7 @@ model Board {
   id          Int      @id @default(autoincrement())
   title       String
   description String
+  category    String 
   image       String
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt

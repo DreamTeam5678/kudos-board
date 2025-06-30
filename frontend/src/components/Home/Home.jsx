@@ -4,18 +4,21 @@ import BoardGrid from "../BoardGrid/BoardGrid";
 import BoardCard from "../BoardCard/BoardCard";
 import axios from "axios";
 import "./Home.css";
-import Footer from "../Footer/Footer";
+import CreateBoardForm from "../CreateBoardForm/CreateBoardForm";
 
 const Home = () => {
     const [boards, setBoards] = useState([]);
     const [filteredBoards, setFilteredBoards] = useState([]);
     const [searchQuery, setSearchQuery] = useState("");
     const [selectedCategory, setSelectedCategory] = useState("all");
-    /*
+    const [showForm, setShowForm] = useState(false);
+
+    
     useEffect(() => {
         const fetchBoards = async () => {
             try {
-                const res = await axios.get("/home");
+                const res = await axios.get("http://localhost:3000/api/boards");
+                console.log("Fetched boards:", res.data);
                 setBoards(res.data);
             } catch (error) {
                 console.error("Error fetching boards:", error);
@@ -23,48 +26,39 @@ const Home = () => {
         };
         fetchBoards();
     }, []);
-    */
+    
     
     useEffect(() => {
-        const filtered = boards.filter((board) => {
+        const filtered = Array.isArray(boards) ?boards.filter((board) => {
             const matchCategory = selectedCategory === "all" || board.category === selectedCategory;
             const matchSearch = board.title.toLowerCase().includes(searchQuery.toLowerCase());
             return matchCategory && matchSearch;
-        });
+        }) : [];
         setFilteredBoards(filtered);
     }, [boards, selectedCategory, searchQuery]);
     
-   useEffect(() => {
-    const dummyBoards = [
-        {
-        id: 1,
-        title: "Team 9",
-        description: "Great launch!",
-        category: "celebration",
-        image: "https://media.istockphoto.com/id/1178741587/photo/celebration-toast-with-champagne.jpg?s=612x612&w=0&k=20&c=7DDPWcPB29jTBr49-48-xMMHYb5yugVhKxzSbrRGV3s="
-        },
-        {
-        id: 2,
-        title: "Pamela!",
-        description: "That header was 🔥",
-        category: "thank-you",
-        image: "https://via.placeholder.com/150"
-        }
-    ];
-    setBoards(dummyBoards);
-    }, []);
-
-    return (
+    const handleCreateBoard = (newBoard) => {
+        setBoards((prevBoards) => [...prevBoards, newBoard]);
+        setShowForm(false);
+    }
+    return(
             <div className="home">
                 <Header
                     searchQuery={searchQuery}
                     setSearchQuery={setSearchQuery}
                     selectedCategory={selectedCategory}
                     setSelectedCategory={setSelectedCategory}
+                    onCreateClick={() => setShowForm(true)}
                 />
-                <BoardGrid boardData={filteredBoards} />
+                <BoardGrid boards={filteredBoards} />
+                {showForm && (
+                    <CreateBoardForm 
+                    onClose = {() => setShowForm(false)}
+                    onCreate = {handleCreateBoard}
+                    />
+                )}
             </div>
-    );
+    ); 
 };
 
 export default Home;

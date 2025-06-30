@@ -2,7 +2,7 @@ import React from 'react';
 import "./BoardCard.css";
 import { Link } from 'react-router-dom';
 
-function BoardCard(board) {
+function BoardCard({ board }) {
     return (
         <div className="board-card">
             <div className="board-card-image">
