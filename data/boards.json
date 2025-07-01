@@ -27,8 +27,40 @@
         },
         {
             "id": 2,
+            "title": "Appreciation Wall",
+            "description": "A virtual wall to celebrate team wins, milestones, and peer shout-outs.",
+            "category": "thank-you",
+            "image": "https://images.unsplash.com/photo-1607746882042-944635dfe10e?ixlib=rb-4.0.3&auto=format&fit=crop&w=700&q=80",
+            "cards": [
+                {
+                    "id": 1,
+                    "message": "Thanks for your help!",
+                    "author": "Pamela",
+                    "description": "Huge shoutout for solving that bug!",
+                    "gifUrl": "https://media.giphy.com/media/l0HlBO7eyXzSZkJri/giphy.gif",
+                    "upvotes" : 0
+                    },
+                    {
+                    "id": 2,
+                    "message": "Your design mockups blew everyone away!",
+                    "author": "Lauritz",
+                    "gifUrl": "https://media.giphy.com/media/xT0GqFqgobZYE9P2co/giphy.gif",
+                    "upvotes": 3
+                    },
+                    {
+                    "id": 3,
+                    "message": "Great energy in the brainstorm today!",
+                    "author": "Senaf",
+                    "gifUrl": "https://media.giphy.com/media/xT0xem5I9kX3NDvUUU/giphy.gif",
+                    "upvotes": 5
+                }
+            ]
+        },
+        
+        {
+            "id": 3,
             "title": "Kudos Board",
-            "description": "Kudos Board is a place where you can share your appreciation for the things you love. It's a great way to show your gratitude and let others know how much you appreciate them.",
+            "description": "Kudos Board is a place where you can share your appreciation for the things you love.",
             "category": "thank-you",
             "image": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
             "cards" : [
@@ -41,27 +73,6 @@
                 },
                     {
                     "id": 2,
-                    "message": "Amazing job!",
-                    "author": "Senaf",
-                    "gifUrl": "https://media.giphy.com/media/xT9IgG50Fb7Mi0prBC/giphy.gif",
-                    "upvotes": 0
-                }
-            ]
-        },
-        {
-            "id": 3,
-            "title": "Kudos Board",
-            "description": "Kudos Board is a place where you can share your appreciation for the things you love. It's a great way to show your gratitude and let others know how much you appreciate them.",
-            "category": "inspiration",
-            "image": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
-            "cards":[
-                {
-                    "message": "Thanks for your help!",
-                    "author": "Pamela",
-                    "gifUrl": "https://media.giphy.com/media/3o7aD2saalBwwftBIY/giphy.gif",
-                    "upvotes": 0
-                },
-                    {
                     "message": "Amazing job!",
                     "author": "Senaf",
                     "gifUrl": "https://media.giphy.com/media/xT9IgG50Fb7Mi0prBC/giphy.gif",
