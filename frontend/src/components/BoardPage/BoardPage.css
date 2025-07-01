@@ -40,6 +40,12 @@ h1 {
  line-height: 1.1;
 }
 
+/*
+button {
+  background-color: #f0f0f0;
+  color: #000;
+}
+*/
 
 button {
  border-radius: 8px;
@@ -48,7 +54,7 @@ button {
  font-size: 1em;
  font-weight: 500;
  font-family: inherit;
- background-color: #1a1a1a;
+ background-color: #f0f0f0;
  cursor: pointer;
  transition: border-color 0.25s;
 }
@@ -61,18 +67,6 @@ button:focus-visible {
 }
 
 
-@media (prefers-color-scheme: light) {
- :root {
-   color: #213547;
-   background-color: #ffffff;
- }
- a:hover {
-   color: #747bff;
- }
- button {
-   background-color: #f9f9f9;
- }
-}
 .add-card-form {
   max-width: 600px;
   margin: 2rem auto;
@@ -183,4 +177,9 @@ button:focus-visible {
 .delete-button {
   background-color: #ef4444;
   color: white;
+}
+:root {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  color-scheme: light;
 }
