@@ -28,14 +28,15 @@ model Board {
 }
 
 model Card {
-  id          Int      @id @default(autoincrement())
-  title       String
-  description String
-  image       String
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
-  Board       Board?   @relation(fields: [boardId], references: [id])
-  boardId     Int?
+  id        Int      @id @default(autoincrement())
+  message   String
+  author    String
+  gifUrl    String
+  upvotes   Int      @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  board     Board?   @relation(fields: [boardId], references: [id])
+  boardId   Int?
 }
 
 model User {

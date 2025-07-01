@@ -77,62 +77,55 @@ const BoardPage = () => {
 
 
       {/* === Add New Card Form === */}
-      <form onSubmit={handleAddCard} style={{ marginBottom: "2rem" }}>
-        <h3>Add a New Card</h3>
+      <form onSubmit={handleAddCard}
+       className="card-form"
+      >
+      
+        <h3 className="form-title">Add a New Card</h3>
         <input
           type="text"
           placeholder="Message (required)"
           value={message}
           onChange={(e) => setMessage(e.target.value)}
           required
-          style={{ display: "block", marginBottom: "0.5rem", width: "100%" }}
+          className="form-input"
         />
         <input
           type="text"
           placeholder="Author (optional)"
           value={author}
           onChange={(e) => setAuthor(e.target.value)}
-          style={{ display: "block", marginBottom: "0.5rem", width: "100%" }}
+          className="form-input"     
         />
-        <input
-          type="text"
-          placeholder="Search GIFs"
-          value={gifSearch}
-          onChange={(e) => setGifSearch(e.target.value)}
-          style={{ display: "inline-block", marginRight: "0.5rem" }}
-        />
-        <button type="button" onClick={handleGifSearch}>
-          Search
-        </button>
-
-        <div
-          style={{
-            display: "flex",
-            gap: "0.5rem",
-            marginTop: "1rem",
-            flexWrap: "wrap",
-          }}
-        >
+        <div className="gif-search-group">
+          <input
+            type="text"
+            placeholder="Search GIFs"
+            value={gifSearch}
+            onChange={(e) => setGifSearch(e.target.value)}
+            className="form-input"
+          />
+          <button
+           type="button"
+           onClick={handleGifSearch}
+           className="search-btn"
+          >
+            Search
+          </button>
+        </div>
+        <div className="gif-results">
           {gifResults.map((gif) => (
             <img
               key={gif.id}
               src={gif.images.fixed_height_small.url}
               alt="gif"
-              style={{
-                border:
-                  gif.images.fixed_height_small.url === selectedGif
-                    ? "3px solid blue"
-                    : "1px solid gray",
-                borderRadius: "6px",
-                cursor: "pointer",
-                width: "100px",
-              }}
+              className={`gif-thumb ${gif.images.fixed_height_small.url === selectedGif ? "selected" : ""}`}
               onClick={() => setSelectedGif(gif.images.fixed_height_small.url)}
             />
           ))}
         </div>
 
-        <button type="submit" style={{ marginTop: "1rem" }}>
+        <button type="submit" className="submit-button">
           Add Card
         </button>
       </form>

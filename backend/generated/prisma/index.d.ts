@@ -2310,19 +2310,22 @@ export namespace Prisma {
 
   export type CardAvgAggregateOutputType = {
     id: number | null
+    upvotes: number | null
     boardId: number | null
   }
 
   export type CardSumAggregateOutputType = {
     id: number | null
+    upvotes: number | null
     boardId: number | null
   }
 
   export type CardMinAggregateOutputType = {
     id: number | null
-    title: string | null
-    description: string | null
-    image: string | null
+    message: string | null
+    author: string | null
+    gifUrl: string | null
+    upvotes: number | null
     createdAt: Date | null
     updatedAt: Date | null
     boardId: number | null
@@ -2330,9 +2333,10 @@ export namespace Prisma {
 
   export type CardMaxAggregateOutputType = {
     id: number | null
-    title: string | null
-    description: string | null
-    image: string | null
+    message: string | null
+    author: string | null
+    gifUrl: string | null
+    upvotes: number | null
     createdAt: Date | null
     updatedAt: Date | null
     boardId: number | null
@@ -2340,9 +2344,10 @@ export namespace Prisma {
 
   export type CardCountAggregateOutputType = {
     id: number
-    title: number
-    description: number
-    image: number
+    message: number
+    author: number
+    gifUrl: number
+    upvotes: number
     createdAt: number
     updatedAt: number
     boardId: number
@@ -2352,19 +2357,22 @@ export namespace Prisma {
 
   export type CardAvgAggregateInputType = {
     id?: true
+    upvotes?: true
     boardId?: true
   }
 
   export type CardSumAggregateInputType = {
     id?: true
+    upvotes?: true
     boardId?: true
   }
 
   export type CardMinAggregateInputType = {
     id?: true
-    title?: true
-    description?: true
-    image?: true
+    message?: true
+    author?: true
+    gifUrl?: true
+    upvotes?: true
     createdAt?: true
     updatedAt?: true
     boardId?: true
@@ -2372,9 +2380,10 @@ export namespace Prisma {
 
   export type CardMaxAggregateInputType = {
     id?: true
-    title?: true
-    description?: true
-    image?: true
+    message?: true
+    author?: true
+    gifUrl?: true
+    upvotes?: true
     createdAt?: true
     updatedAt?: true
     boardId?: true
@@ -2382,9 +2391,10 @@ export namespace Prisma {
 
   export type CardCountAggregateInputType = {
     id?: true
-    title?: true
-    description?: true
-    image?: true
+    message?: true
+    author?: true
+    gifUrl?: true
+    upvotes?: true
     createdAt?: true
     updatedAt?: true
     boardId?: true
@@ -2479,9 +2489,10 @@ export namespace Prisma {
 
   export type CardGroupByOutputType = {
     id: number
-    title: string
-    description: string
-    image: string
+    message: string
+    author: string
+    gifUrl: string
+    upvotes: number
     createdAt: Date
     updatedAt: Date
     boardId: number | null
@@ -2508,68 +2519,73 @@ export namespace Prisma {
 
   export type CardSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    title?: boolean
-    description?: boolean
-    image?: boolean
+    message?: boolean
+    author?: boolean
+    gifUrl?: boolean
+    upvotes?: boolean
     createdAt?: boolean
     updatedAt?: boolean
     boardId?: boolean
-    Board?: boolean | Card$BoardArgs<ExtArgs>
+    board?: boolean | Card$boardArgs<ExtArgs>
   }, ExtArgs["result"]["card"]>
 
   export type CardSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    title?: boolean
-    description?: boolean
-    image?: boolean
+    message?: boolean
+    author?: boolean
+    gifUrl?: boolean
+    upvotes?: boolean
     createdAt?: boolean
     updatedAt?: boolean
     boardId?: boolean
-    Board?: boolean | Card$BoardArgs<ExtArgs>
+    board?: boolean | Card$boardArgs<ExtArgs>
   }, ExtArgs["result"]["card"]>
 
   export type CardSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    title?: boolean
-    description?: boolean
-    image?: boolean
+    message?: boolean
+    author?: boolean
+    gifUrl?: boolean
+    upvotes?: boolean
     createdAt?: boolean
     updatedAt?: boolean
     boardId?: boolean
-    Board?: boolean | Card$BoardArgs<ExtArgs>
+    board?: boolean | Card$boardArgs<ExtArgs>
   }, ExtArgs["result"]["card"]>
 
   export type CardSelectScalar = {
     id?: boolean
-    title?: boolean
-    description?: boolean
-    image?: boolean
+    message?: boolean
+    author?: boolean
+    gifUrl?: boolean
+    upvotes?: boolean
     createdAt?: boolean
     updatedAt?: boolean
     boardId?: boolean
   }
 
-  export type CardOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "title" | "description" | "image" | "createdAt" | "updatedAt" | "boardId", ExtArgs["result"]["card"]>
+  export type CardOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "message" | "author" | "gifUrl" | "upvotes" | "createdAt" | "updatedAt" | "boardId", ExtArgs["result"]["card"]>
   export type CardInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    Board?: boolean | Card$BoardArgs<ExtArgs>
+    board?: boolean | Card$boardArgs<ExtArgs>
   }
   export type CardIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    Board?: boolean | Card$BoardArgs<ExtArgs>
+    board?: boolean | Card$boardArgs<ExtArgs>
   }
   export type CardIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    Board?: boolean | Card$BoardArgs<ExtArgs>
+    board?: boolean | Card$boardArgs<ExtArgs>
   }
 
   export type $CardPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "Card"
     objects: {
-      Board: Prisma.$BoardPayload<ExtArgs> | null
+      board: Prisma.$BoardPayload<ExtArgs> | null
     }
     scalars: $Extensions.GetPayloadResult<{
       id: number
-      title: string
-      description: string
-      image: string
+      message: string
+      author: string
+      gifUrl: string
+      upvotes: number
       createdAt: Date
       updatedAt: Date
       boardId: number | null
@@ -2967,7 +2983,7 @@ export namespace Prisma {
    */
   export interface Prisma__CardClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
-    Board<T extends Card$BoardArgs<ExtArgs> = {}>(args?: Subset<T, Card$BoardArgs<ExtArgs>>): Prisma__BoardClient<$Result.GetResult<Prisma.$BoardPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    board<T extends Card$boardArgs<ExtArgs> = {}>(args?: Subset<T, Card$boardArgs<ExtArgs>>): Prisma__BoardClient<$Result.GetResult<Prisma.$BoardPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -2998,9 +3014,10 @@ export namespace Prisma {
    */
   interface CardFieldRefs {
     readonly id: FieldRef<"Card", 'Int'>
-    readonly title: FieldRef<"Card", 'String'>
-    readonly description: FieldRef<"Card", 'String'>
-    readonly image: FieldRef<"Card", 'String'>
+    readonly message: FieldRef<"Card", 'String'>
+    readonly author: FieldRef<"Card", 'String'>
+    readonly gifUrl: FieldRef<"Card", 'String'>
+    readonly upvotes: FieldRef<"Card", 'Int'>
     readonly createdAt: FieldRef<"Card", 'DateTime'>
     readonly updatedAt: FieldRef<"Card", 'DateTime'>
     readonly boardId: FieldRef<"Card", 'Int'>
@@ -3400,9 +3417,9 @@ export namespace Prisma {
   }
 
   /**
-   * Card.Board
+   * Card.board
    */
-  export type Card$BoardArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Card$boardArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
      * Select specific fields to fetch from the Board
      */
@@ -4571,9 +4588,10 @@ export namespace Prisma {
 
   export const CardScalarFieldEnum: {
     id: 'id',
-    title: 'title',
-    description: 'description',
-    image: 'image',
+    message: 'message',
+    author: 'author',
+    gifUrl: 'gifUrl',
+    upvotes: 'upvotes',
     createdAt: 'createdAt',
     updatedAt: 'updatedAt',
     boardId: 'boardId'
@@ -4761,24 +4779,26 @@ export namespace Prisma {
     OR?: CardWhereInput[]
     NOT?: CardWhereInput | CardWhereInput[]
     id?: IntFilter<"Card"> | number
-    title?: StringFilter<"Card"> | string
-    description?: StringFilter<"Card"> | string
-    image?: StringFilter<"Card"> | string
+    message?: StringFilter<"Card"> | string
+    author?: StringFilter<"Card"> | string
+    gifUrl?: StringFilter<"Card"> | string
+    upvotes?: IntFilter<"Card"> | number
     createdAt?: DateTimeFilter<"Card"> | Date | string
     updatedAt?: DateTimeFilter<"Card"> | Date | string
     boardId?: IntNullableFilter<"Card"> | number | null
-    Board?: XOR<BoardNullableScalarRelationFilter, BoardWhereInput> | null
+    board?: XOR<BoardNullableScalarRelationFilter, BoardWhereInput> | null
   }
 
   export type CardOrderByWithRelationInput = {
     id?: SortOrder
-    title?: SortOrder
-    description?: SortOrder
-    image?: SortOrder
+    message?: SortOrder
+    author?: SortOrder
+    gifUrl?: SortOrder
+    upvotes?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
     boardId?: SortOrderInput | SortOrder
-    Board?: BoardOrderByWithRelationInput
+    board?: BoardOrderByWithRelationInput
   }
 
   export type CardWhereUniqueInput = Prisma.AtLeast<{
@@ -4786,20 +4806,22 @@ export namespace Prisma {
     AND?: CardWhereInput | CardWhereInput[]
     OR?: CardWhereInput[]
     NOT?: CardWhereInput | CardWhereInput[]
-    title?: StringFilter<"Card"> | string
-    description?: StringFilter<"Card"> | string
-    image?: StringFilter<"Card"> | string
+    message?: StringFilter<"Card"> | string
+    author?: StringFilter<"Card"> | string
+    gifUrl?: StringFilter<"Card"> | string
+    upvotes?: IntFilter<"Card"> | number
     createdAt?: DateTimeFilter<"Card"> | Date | string
     updatedAt?: DateTimeFilter<"Card"> | Date | string
     boardId?: IntNullableFilter<"Card"> | number | null
-    Board?: XOR<BoardNullableScalarRelationFilter, BoardWhereInput> | null
+    board?: XOR<BoardNullableScalarRelationFilter, BoardWhereInput> | null
   }, "id">
 
   export type CardOrderByWithAggregationInput = {
     id?: SortOrder
-    title?: SortOrder
-    description?: SortOrder
-    image?: SortOrder
+    message?: SortOrder
+    author?: SortOrder
+    gifUrl?: SortOrder
+    upvotes?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
     boardId?: SortOrderInput | SortOrder
@@ -4815,9 +4837,10 @@ export namespace Prisma {
     OR?: CardScalarWhereWithAggregatesInput[]
     NOT?: CardScalarWhereWithAggregatesInput | CardScalarWhereWithAggregatesInput[]
     id?: IntWithAggregatesFilter<"Card"> | number
-    title?: StringWithAggregatesFilter<"Card"> | string
-    description?: StringWithAggregatesFilter<"Card"> | string
-    image?: StringWithAggregatesFilter<"Card"> | string
+    message?: StringWithAggregatesFilter<"Card"> | string
+    author?: StringWithAggregatesFilter<"Card"> | string
+    gifUrl?: StringWithAggregatesFilter<"Card"> | string
+    upvotes?: IntWithAggregatesFilter<"Card"> | number
     createdAt?: DateTimeWithAggregatesFilter<"Card"> | Date | string
     updatedAt?: DateTimeWithAggregatesFilter<"Card"> | Date | string
     boardId?: IntNullableWithAggregatesFilter<"Card"> | number | null
@@ -4958,38 +4981,42 @@ export namespace Prisma {
   }
 
   export type CardCreateInput = {
-    title: string
-    description: string
-    image: string
+    message: string
+    author: string
+    gifUrl: string
+    upvotes?: number
     createdAt?: Date | string
     updatedAt?: Date | string
-    Board?: BoardCreateNestedOneWithoutCardsInput
+    board?: BoardCreateNestedOneWithoutCardsInput
   }
 
   export type CardUncheckedCreateInput = {
     id?: number
-    title: string
-    description: string
-    image: string
+    message: string
+    author: string
+    gifUrl: string
+    upvotes?: number
     createdAt?: Date | string
     updatedAt?: Date | string
     boardId?: number | null
   }
 
   export type CardUpdateInput = {
-    title?: StringFieldUpdateOperationsInput | string
-    description?: StringFieldUpdateOperationsInput | string
-    image?: StringFieldUpdateOperationsInput | string
+    message?: StringFieldUpdateOperationsInput | string
+    author?: StringFieldUpdateOperationsInput | string
+    gifUrl?: StringFieldUpdateOperationsInput | string
+    upvotes?: IntFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    Board?: BoardUpdateOneWithoutCardsNestedInput
+    board?: BoardUpdateOneWithoutCardsNestedInput
   }
 
   export type CardUncheckedUpdateInput = {
     id?: IntFieldUpdateOperationsInput | number
-    title?: StringFieldUpdateOperationsInput | string
-    description?: StringFieldUpdateOperationsInput | string
-    image?: StringFieldUpdateOperationsInput | string
+    message?: StringFieldUpdateOperationsInput | string
+    author?: StringFieldUpdateOperationsInput | string
+    gifUrl?: StringFieldUpdateOperationsInput | string
+    upvotes?: IntFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     boardId?: NullableIntFieldUpdateOperationsInput | number | null
@@ -4997,27 +5024,30 @@ export namespace Prisma {
 
   export type CardCreateManyInput = {
     id?: number
-    title: string
-    description: string
-    image: string
+    message: string
+    author: string
+    gifUrl: string
+    upvotes?: number
     createdAt?: Date | string
     updatedAt?: Date | string
     boardId?: number | null
   }
 
   export type CardUpdateManyMutationInput = {
-    title?: StringFieldUpdateOperationsInput | string
-    description?: StringFieldUpdateOperationsInput | string
-    image?: StringFieldUpdateOperationsInput | string
+    message?: StringFieldUpdateOperationsInput | string
+    author?: StringFieldUpdateOperationsInput | string
+    gifUrl?: StringFieldUpdateOperationsInput | string
+    upvotes?: IntFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type CardUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
-    title?: StringFieldUpdateOperationsInput | string
-    description?: StringFieldUpdateOperationsInput | string
-    image?: StringFieldUpdateOperationsInput | string
+    message?: StringFieldUpdateOperationsInput | string
+    author?: StringFieldUpdateOperationsInput | string
+    gifUrl?: StringFieldUpdateOperationsInput | string
+    upvotes?: IntFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     boardId?: NullableIntFieldUpdateOperationsInput | number | null
@@ -5262,9 +5292,10 @@ export namespace Prisma {
 
   export type CardCountOrderByAggregateInput = {
     id?: SortOrder
-    title?: SortOrder
-    description?: SortOrder
-    image?: SortOrder
+    message?: SortOrder
+    author?: SortOrder
+    gifUrl?: SortOrder
+    upvotes?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
     boardId?: SortOrder
@@ -5272,14 +5303,16 @@ export namespace Prisma {
 
   export type CardAvgOrderByAggregateInput = {
     id?: SortOrder
+    upvotes?: SortOrder
     boardId?: SortOrder
   }
 
   export type CardMaxOrderByAggregateInput = {
     id?: SortOrder
-    title?: SortOrder
-    description?: SortOrder
-    image?: SortOrder
+    message?: SortOrder
+    author?: SortOrder
+    gifUrl?: SortOrder
+    upvotes?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
     boardId?: SortOrder
@@ -5287,9 +5320,10 @@ export namespace Prisma {
 
   export type CardMinOrderByAggregateInput = {
     id?: SortOrder
-    title?: SortOrder
-    description?: SortOrder
-    image?: SortOrder
+    message?: SortOrder
+    author?: SortOrder
+    gifUrl?: SortOrder
+    upvotes?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
     boardId?: SortOrder
@@ -5297,6 +5331,7 @@ export namespace Prisma {
 
   export type CardSumOrderByAggregateInput = {
     id?: SortOrder
+    upvotes?: SortOrder
     boardId?: SortOrder
   }
 
@@ -5615,18 +5650,20 @@ export namespace Prisma {
   }
 
   export type CardCreateWithoutBoardInput = {
-    title: string
-    description: string
-    image: string
+    message: string
+    author: string
+    gifUrl: string
+    upvotes?: number
     createdAt?: Date | string
     updatedAt?: Date | string
   }
 
   export type CardUncheckedCreateWithoutBoardInput = {
     id?: number
-    title: string
-    description: string
-    image: string
+    message: string
+    author: string
+    gifUrl: string
+    upvotes?: number
     createdAt?: Date | string
     updatedAt?: Date | string
   }
@@ -5682,9 +5719,10 @@ export namespace Prisma {
     OR?: CardScalarWhereInput[]
     NOT?: CardScalarWhereInput | CardScalarWhereInput[]
     id?: IntFilter<"Card"> | number
-    title?: StringFilter<"Card"> | string
-    description?: StringFilter<"Card"> | string
-    image?: StringFilter<"Card"> | string
+    message?: StringFilter<"Card"> | string
+    author?: StringFilter<"Card"> | string
+    gifUrl?: StringFilter<"Card"> | string
+    upvotes?: IntFilter<"Card"> | number
     createdAt?: DateTimeFilter<"Card"> | Date | string
     updatedAt?: DateTimeFilter<"Card"> | Date | string
     boardId?: IntNullableFilter<"Card"> | number | null
@@ -5837,35 +5875,39 @@ export namespace Prisma {
 
   export type CardCreateManyBoardInput = {
     id?: number
-    title: string
-    description: string
-    image: string
+    message: string
+    author: string
+    gifUrl: string
+    upvotes?: number
     createdAt?: Date | string
     updatedAt?: Date | string
   }
 
   export type CardUpdateWithoutBoardInput = {
-    title?: StringFieldUpdateOperationsInput | string
-    description?: StringFieldUpdateOperationsInput | string
-    image?: StringFieldUpdateOperationsInput | string
+    message?: StringFieldUpdateOperationsInput | string
+    author?: StringFieldUpdateOperationsInput | string
+    gifUrl?: StringFieldUpdateOperationsInput | string
+    upvotes?: IntFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type CardUncheckedUpdateWithoutBoardInput = {
     id?: IntFieldUpdateOperationsInput | number
-    title?: StringFieldUpdateOperationsInput | string
-    description?: StringFieldUpdateOperationsInput | string
-    image?: StringFieldUpdateOperationsInput | string
+    message?: StringFieldUpdateOperationsInput | string
+    author?: StringFieldUpdateOperationsInput | string
+    gifUrl?: StringFieldUpdateOperationsInput | string
+    upvotes?: IntFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type CardUncheckedUpdateManyWithoutBoardInput = {
     id?: IntFieldUpdateOperationsInput | number
-    title?: StringFieldUpdateOperationsInput | string
-    description?: StringFieldUpdateOperationsInput | string
-    image?: StringFieldUpdateOperationsInput | string
+    message?: StringFieldUpdateOperationsInput | string
+    author?: StringFieldUpdateOperationsInput | string
+    gifUrl?: StringFieldUpdateOperationsInput | string
+    upvotes?: IntFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }

@@ -19,11 +19,12 @@ async function main() {
     for (const card of board.cards) {
       await prisma.card.create({
         data: {
-          title: card.title,
-          description: card.description,
-          image: card.image,
+          message: card.message || "No message provided",
+          author: card.author || "Anonymous",
+          gifUrl: card.gifUrl || "https://media.giphy.com/media/l0MYGb1LuZ3n7dRnO/giphy.gif", 
+          upvotes: card.upvotes || 0,
           boardId: newBoard.id,
-        },
+        }
       });
     }
   }
