@@ -1,65 +1,8 @@
 .board-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
+  height: auto;
   gap: 2rem;
   margin-top: 2rem;
+  padding: 20px;
 }
-
-.board-card {
-  border: 1px solid #ccc;
-  padding: 1rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  height: 400px;;
-}
-
-.board-card-image {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 1rem;
-}
-
-.board-card-image img {
-  width: 100%;
-  border-radius: 6px;
-  object-fit: cover;
-  height: 200px;
-}
-
-.board-card-content {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.board-card-title {
-  font-size: 1.2rem;
-  font-weight: 600;
-}
-
-.board-card-description {
-  font-size: 0.9rem;
-  color: #666;
-}
-
-.board-card-actions {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-}
-
-.board-card-button {
-  padding: 0.6rem 1.2rem;
-  font-size: 0.95rem;
-  border-radius: 12px;
-  background-color: #e0ebff;
-  border: 2px dashed #5571c3;
-  color: #1c1c1c;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.board-card-button:hover {
-  background-color: #d0ddf7;
-}   
