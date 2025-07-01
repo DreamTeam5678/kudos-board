@@ -17,6 +17,7 @@ app.get('/', (req, res) => {
 })
 
 app.use('/boards', boardsRouter);
+console.log("This is a test");
 
 
 /*app.get('/api/boards', async (req, res) => {
