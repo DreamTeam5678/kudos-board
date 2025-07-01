@@ -133,9 +133,10 @@ exports.Prisma.BoardScalarFieldEnum = {
 
 exports.Prisma.CardScalarFieldEnum = {
   id: 'id',
-  title: 'title',
-  description: 'description',
-  image: 'image',
+  message: 'message',
+  author: 'author',
+  gifUrl: 'gifUrl',
+  upvotes: 'upvotes',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt',
   boardId: 'boardId'
