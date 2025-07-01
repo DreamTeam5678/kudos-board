@@ -183,3 +183,41 @@ button:focus-visible {
   color: #000000 !important;
   color-scheme: light;
 }
+
+.gif-results {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.gif-thumb {
+  width: 100px;
+  border: 2px solid transparent;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.gif-thumb.selected {
+  border-color: #3b82f6;
+}
+
+.selected-gif-preview {
+  margin-top: 1rem;
+}
+
+.selected-gif-preview img {
+  width: 150px;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+.cancel-button {
+  background-color: #e5e5e5;
+  color: #333;
+}
+
+.cancel-button:hover {
+  background-color: #d4d4d4;
+}
