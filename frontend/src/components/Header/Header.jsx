@@ -1,6 +1,7 @@
 import React from "react";
 import "./Header.css";
 import { FaSearch, FaTimes } from "react-icons/fa";
+import logo from "/src/assets/wireframeDraft.png"; 
 
 const categories = [
   { label: "All", value: "all" },
@@ -16,7 +17,8 @@ const Header = ({ searchQuery, setSearchQuery, selectedCategory, setSelectedCate
 
   return (
     <header className="header">
-      <h1 className="logo-text">Kudos<br />Board</h1>
+      <img src={logo} alt="logo" className="logo" />
+      {/* <h1 className="logo-text">Kudos Board</h1> */}
 
       <div className="search-bar-wrapper">
         <div className="search-container">
