@@ -1,0 +1,83 @@
+const { PrismaClient } = require('@prisma/client');
+const prisma = new PrismaClient();
+
+// Get all board cards
+exports.getBoardCards = async (req, res) => {
+    const { boardId } = req.params;
+    try {
+        const boardCards = await prisma.card.findMany({
+            where: { boardId: parseInt(boardId) },
+        });
+        res.json(boardCards);
+    } catch (error) {
+        console.error('Error fetching board cards:', error);
+        res.status(500).json({ error: 'Failed to fetch board cards' });
+    }
+};
+
+// Get a single board card
+exports.getBoardCardById = async (req, res) => {
+    const { cardId } = req.params;
+    try {
+        const boardCard = await prisma.card.findUnique({
+            where: { id: parseInt(cardId) },
+        });
+        res.json(boardCard);
+    } catch (error) {
+        console.error('Error fetching board card:', error);
+        res.status(500).json({ error: 'Failed to fetch board card' });
+    }
+};
+
+// Create a new board card
+exports.createBoardCard = async (req, res) => {
+    const { boardId } = req.params;
+    try {
+        const newBoardCard = await prisma.card.create({
+            data: {
+                title: req.body.title,
+                description: req.body.description,
+                image: req.body.image,
+                boardId: parseInt(boardId),
+            },
+        });
+        res.json(newBoardCard);
+    } catch (error) {
+        console.error('Error creating board card:', error);
+        res.status(500).json({ error: 'Failed to create board card' });
+    }
+};
+
+// Update a board card
+exports.updateBoardCard = async (req, res) => {         
+    const { cardId } = req.params;
+    try {
+        const updatedBoardCard = await prisma.card.update({
+            where: { id: parseInt(cardId) },
+            data: {
+                title: req.body.title,
+                description: req.body.description,
+                image: req.body.image,
+            },
+        });
+        res.json(updatedBoardCard);
+    } catch (error) {
+        console.error('Error updating board card:', error);
+        res.status(500).json({ error: 'Failed to update board card' });
+    }
+};
+
+// Delete a board card
+exports.deleteBoardCard = async (req, res) => {
+    const { cardId } = req.params;
+    try {
+        const deletedBoardCard = await prisma.card.delete({
+            where: { id: parseInt(cardId) },
+        });
+        res.json(deletedBoardCard);
+    } catch (error) {
+        console.error('Error deleting board card:', error);
+        res.status(500).json({ error: 'Failed to delete board card' });
+    }
+};  
+

@@ -154,7 +154,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "/Users/pmensah/kudos-board/backend/generated/prisma",
+      "value": "/Users/sgeleta/ftl-2025/kudos-board/backend/generated/prisma",
       "fromEnvVar": null
     },
     "config": {
@@ -168,11 +168,11 @@ const config = {
       }
     ],
     "previewFeatures": [],
-    "sourceFilePath": "/Users/pmensah/kudos-board/backend/prisma/schema.prisma",
+    "sourceFilePath": "/Users/sgeleta/ftl-2025/kudos-board/backend/prisma/schema.prisma",
     "isCustomOutput": true
   },
   "relativeEnvPaths": {
-    "rootEnvPath": "../../.env",
+    "rootEnvPath": null,
     "schemaEnvPath": "../../.env"
   },
   "relativePath": "../../prisma",
@@ -182,6 +182,7 @@ const config = {
     "db"
   ],
   "activeProvider": "postgresql",
+  "postinstall": false,
   "inlineDatasources": {
     "db": {
       "url": {

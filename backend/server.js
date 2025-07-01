@@ -2,8 +2,11 @@ const express = require('express')
 const cors = require('cors')
 const app = express()
 const PORT = 3000
-const { PrismaClient } = require('./generated/prisma');
+const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient();
+
+const boardsRouter = require('./routes/boards');
+const boardCardsRouter = require('./routes/boardCards');
 
 app.use(cors())
 app.listen(PORT, () => {
@@ -13,7 +16,10 @@ app.get('/', (req, res) => {
     res.send("Yay our backend is working! ")
 })
 
-app.get('/api/boards', async (req, res) => {
+app.use('/boards', boardsRouter);
+
+
+/*app.get('/api/boards', async (req, res) => {
   try {
     const boards = await prisma.board.findMany({
       include: { cards: true },
@@ -37,5 +43,5 @@ app.get('/api/boards/:id', async (req, res) => {
     console.error(err);
     res.status(500).json({ error: "Board not found" });
   }
-});
+}); */
 
