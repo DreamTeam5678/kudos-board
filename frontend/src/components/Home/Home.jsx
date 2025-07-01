@@ -16,6 +16,7 @@ const Home = () => {
     
     useEffect(() => {
         const fetchBoards = async () => {
+            // Fetch all boards from the server
             try {
                 const res = await axios.get("http://localhost:3000/boards");
                 console.log("Fetched boards:", res.data);

@@ -38,21 +38,27 @@ const BoardPage = () => {
     setCards(updated);
   };
 
+  // Delete a card
   const handleDelete = async (cardId) => {
     try {
+      // Send DELETE request to delete card
       const res = await fetch(`http://localhost:3000/boards/${id}/cards/${cardId}`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
         },
       });
+      // Check if the request was successful
       if (!res.ok) {
         const errorTxt = await res.text();
         console.error("Error deleting card:", res.status, errorTxt);
 
         return;
       }
+      // Parse the response as JSON
       const data = await res.json();
+
+      // Update the state with the deleted card
       setCards(prev => prev.filter(card => card.id !== cardId));
     } catch (error) {
       console.error("Error deleting card:", error);

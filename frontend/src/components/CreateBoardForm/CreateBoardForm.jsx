@@ -19,13 +19,16 @@ const CreateBoardForm = ({ onCreate, onClose }) => {
     e.preventDefault();
     if (!formData.title || !formData.description || !formData.image || !formData.category) return;
     try {
+      // Send POST request to create a new board
       const res = await fetch("http://localhost:3000/boards", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
+        // Convert the form data to JSON
         body: JSON.stringify(formData),
       });
+       // Check if the request was successful  
        if (!res.ok) {
         const errorTxt = await res.text();
         console.error("Error creating board:", res.status, errorTxt);
@@ -33,7 +36,9 @@ const CreateBoardForm = ({ onCreate, onClose }) => {
         return;
       }
       const data = await res.json();
+      //pass the data to the onCreate function
       onCreate(data);
+      //close the modal
       onClose();
     } catch (error) {
       console.error("Error creating board:", error);
