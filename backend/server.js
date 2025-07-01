@@ -7,7 +7,7 @@ const prisma = new PrismaClient();
 
 const boardsRouter = require('./routes/boards');
 const boardCardsRouter = require('./routes/boardCards');
-
+app.use(express.json());
 app.use(cors())
 app.use(express.json())
 app.listen(PORT, () => {
@@ -18,6 +18,8 @@ app.get('/', (req, res) => {
 })
 
 app.use('/boards', boardsRouter);
+app.use('/boards', boardCardsRouter);
+
 
 
 /*app.get('/api/boards', async (req, res) => {

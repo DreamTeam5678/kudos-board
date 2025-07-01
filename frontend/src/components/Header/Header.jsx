@@ -1,7 +1,7 @@
 import React from "react";
 import "./Header.css";
 import { FaSearch, FaTimes } from "react-icons/fa";
-import logo from "/src/assets/wireframeDraft.png"; 
+import logo from "/src/assets/logo2.png"; 
 
 const categories = [
   { label: "All", value: "all" },
@@ -25,7 +25,7 @@ const Header = ({ searchQuery, setSearchQuery, selectedCategory, setSelectedCate
           <FaSearch className="search-icon" />
           <input
             type="text"
-            placeholder="Search"
+            placeholder="Pin to Board ✎ᝰ..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
           />

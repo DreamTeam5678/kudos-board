@@ -83,3 +83,21 @@ exports.deleteBoardCard = async (req, res) => {
     }
 };  
 
+// Upvote a board card
+exports.upvoteBoardCard = async (req, res) => {
+  const { cardId } = req.params;
+  try {
+    const updatedCard = await prisma.card.update({
+      where: { id: parseInt(cardId) },
+      data: {
+        upvotes: {
+          increment: 1, 
+        },
+      },
+    });
+    res.json(updatedCard);
+  } catch (error) {
+    console.error("Error upvoting card:", error);
+    res.status(500).json({ error: "Failed to upvote card" });
+  }
+};
