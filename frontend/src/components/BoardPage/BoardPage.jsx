@@ -20,7 +20,7 @@ const BoardPage = () => {
   useEffect(() => {
     const fetchBoard = async () => {
       try{
-        const res = await fetch(`http://localhost:3000/api/boards/${id}`);
+        const res = await fetch(`http://localhost:3000/boards/${id}`);
         const json = await res.json();
         setBoard(json);
         setCards(json.cards || []);
