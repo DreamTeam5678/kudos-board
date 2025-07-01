@@ -1,225 +1,4 @@
 /*
-// src/components/BoardPage.jsx
-import {useParams} from "react-router-dom";
-import React, { useState, useEffect } from "react";
-import "./BoardPage.css";
-
-
-const GIPHY_API_KEY = "jKqO4xyMXqOJhKNVdfYCwohtHEj1q255"; // my key  from https://developers.giphy.com/dashboard/// Public beta key
-
-const BoardPage = () => {
-  const { id } = useParams();
-  const [board, setBoard] = useState(null);
-  const [cards, setCards] = useState([]);
-  const [message, setMessage] = useState("");
-  const [author, setAuthor] = useState("");
-  const [gifSearch, setGifSearch] = useState("");
-  const [gifResults, setGifResults] = useState([]);
-  const [selectedGif, setSelectedGif] = useState(null);
-
-
-  useEffect(() => {
-    const fetchBoard = async () => {
-      try{
-        const res = await fetch(`http://localhost:3000/boards/${id}`);
-        const json = await res.json();
-        setBoard(json);
-        setCards(json.cards || []);
-      } catch (error) {
-        console.error("Error fetching board:", error);
-      }
-    };
-    fetchBoard();
-  }, [id]);
-
-  const handleUpvote = (cardId) => {
-    const updated = cards.map((card) =>
-      card.id === cardId ? { ...card, upvotes: card.upvotes + 1 } : card
-    );
-    setCards(updated);
-  };
-
-  // Delete a card
-  const handleDelete = async (cardId) => {
-    try {
-      // Send DELETE request to delete card
-      const res = await fetch(`http://localhost:3000/boards/${id}/cards/${cardId}`, {
-        method: "DELETE",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
-      // Check if the request was successful
-      if (!res.ok) {
-        const errorTxt = await res.text();
-        console.error("Error deleting card:", res.status, errorTxt);
-
-        return;
-      }
-      // Parse the response as JSON
-      const data = await res.json();
-
-      // Update the state with the deleted card
-      setCards(prev => prev.filter(card => card.id !== cardId));
-    } catch (error) {
-      console.error("Error deleting card:", error);
-    }
-  };
-
-  const handleGifSearch = async () => {
-    const res = await fetch(
-      `https://api.giphy.com/v1/gifs/search?api_key=${GIPHY_API_KEY}&q=${gifSearch}&limit=5`
-    );
-    const json = await res.json();
-    setGifResults(json.data);
-  };
-
-  const handleAddCard = async (e) => {
-    e.preventDefault();
-    if (!message || !selectedGif) return alert("Message and GIF required");
-
-    // setting data to be sent to the server
-    const newCardData= {
-      message,
-      author: author || "Anonymous",
-      gifUrl: selectedGif,
-      upvotes: 0,
-    };
-    
-
-    try {
-      // Send POST request to create a new card
-      const res = await fetch(`http://localhost:3000/boards/${id}/cards`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(newCardData),
-      });
-      // Check if the request was successful
-      if (!res.ok) {
-        const errorTxt = await res.text();
-        console.error("Error creating card:", res.status, errorTxt);
-
-        return;
-      }
-      const data = await res.json();
-    
-      // Add the new card to exitsing cards
-      setCards((prevCards) => [data, ...prevCards]);
-      // Clear the form
-      setMessage("");
-      setAuthor("");
-      setGifSearch("");
-      setGifResults([]);
-      setSelectedGif(null);
-    } catch (error) {
-      console.error("Error creating card:", error);
-    }
-
-  };
-
-  return (
-    <div>
-      <h1>{board?.title || "Board Page"}</h1>
-
-
-      <form onSubmit={handleAddCard}
-       className="card-form"
-      >
-        <input
-          type="text"
-          placeholder="Message (required)"
-          value={message}
-          onChange={(e) => setMessage(e.target.value)}
-          required
-          className="form-input"
-        />
-        <input
-          type="text"
-          placeholder="Author (optional)"
-          value={author}
-          onChange={(e) => setAuthor(e.target.value)}
-          className="form-input"     
-        />
-        <div className="gif-search-group">
-          <input
-            type="text"
-            placeholder="Search GIFs"
-            value={gifSearch}
-            onChange={(e) => setGifSearch(e.target.value)}
-            className="form-input"
-          />
-          <button
-           type="button"
-           onClick={handleGifSearch}
-           className="search-btn"
-          >
-            Search
-          </button>
-        </div>
-        <div className="gif-results">
-          {gifResults.map((gif) => (
-            <img
-              key={gif.id}
-              src={gif.images.fixed_height_small.url}
-              alt="gif"
-              className={`gif-thumb ${gif.images.fixed_height_small.url === selectedGif ? "selected" : ""}`}
-              onClick={() => setSelectedGif(gif.images.fixed_height_small.url)}
-            />
-          ))}
-        </div>
-
-        <button type="submit" className="submit-button">
-          Add Card
-        </button>
-      </form>
-
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
-          gap: "1rem",
-        }}
-      >
-        {cards.map((card) => (
-          <div
-            key={card.id}
-            style={{
-              border: "1px solid #ccc",
-              padding: "1rem",
-              borderRadius: "8px",
-              boxShadow: "0 2px 6px rgba(0,0,0,0.1)",
-            }}
-          >
-            <h3>{card.message}</h3>
-            <img
-              src={card.gifUrl}
-              alt="GIF"
-              style={{ width: "100%", borderRadius: "6px" }}
-            />
-            <p>
-              <strong>Author:</strong> {card.author}
-            </p>
-            <p>👍 {card.upvotes}</p>
-            <button onClick={() => handleUpvote(card.id)}>Upvote</button>
-            <button
-              onClick={() => handleDelete(card.id)}
-              style={{ marginLeft: "0.5rem", color: "red" }}
-            >
-              Delete
-            </button>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-};
-
-export default BoardPage;
-*/
-// src/components/BoardPage.jsx
-// src/components/BoardPage.jsx
 import { useParams } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import "./BoardPage.css";
@@ -370,6 +149,110 @@ const BoardPage = () => {
           <button type="submit" className="submit-button">Add Card</button>
         </div>
       </form>
+
+      <div className="card-grid">
+        {cards.map((card) => (
+          <div key={card.id} className="card">
+            <h3>{card.message}</h3>
+            <img src={card.gifUrl} alt="GIF" className="gif-display" />
+            <p><strong>Author:</strong> {card.author}</p>
+            <p>👍 {card.upvotes}</p>
+            <button onClick={() => handleUpvote(card.id)}>Upvote</button>
+            <button onClick={() => handleDelete(card.id)} className="delete-button">Delete</button>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default BoardPage;
+*/
+import { useParams } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import CreateCardForm from "./CreateCardForm";
+import "./BoardPage.css";
+
+const GIPHY_API_KEY = "jKqO4xyMXqOJhKNVdfYCwohtHEj1q255";
+
+const BoardPage = () => {
+  const { id } = useParams();
+  const [board, setBoard] = useState(null);
+  const [cards, setCards] = useState([]);
+  const [showModal, setShowModal] = useState(false);
+
+  useEffect(() => {
+    const fetchBoard = async () => {
+      try {
+        const res = await fetch(`http://localhost:3000/boards/${id}`);
+        const json = await res.json();
+        setBoard(json);
+        setCards(json.cards || []);
+      } catch (error) {
+        console.error("Error fetching board:", error);
+      }
+    };
+    fetchBoard();
+  }, [id]);
+
+  const handleUpvote = async (cardId) => {
+    try {
+      const res = await fetch(`http://localhost:3000/boards/${id}/cards/${cardId}/upvote`, {
+        method: "POST",
+      });
+      if (!res.ok) throw new Error("Failed to upvote");
+      const updated = cards.map((card) =>
+        card.id === cardId ? { ...card, upvotes: card.upvotes + 1 } : card
+      );
+      setCards(updated);
+    } catch (error) {
+      console.error("Upvote error:", error);
+    }
+  };
+
+  const handleDelete = async (cardId) => {
+    try {
+      const res = await fetch(`http://localhost:3000/boards/${id}/cards/${cardId}`, {
+        method: "DELETE",
+      });
+      if (!res.ok) throw new Error("Failed to delete card");
+      setCards((prev) => prev.filter((card) => card.id !== cardId));
+    } catch (error) {
+      console.error("Delete error:", error);
+    }
+  };
+
+  const handleCreate = async (newCard) => {
+    try {
+      const res = await fetch(`http://localhost:3000/boards/${id}/cards`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(newCard),
+      });
+      if (!res.ok) throw new Error("Failed to create card");
+      const data = await res.json();
+      setCards((prev) => [data, ...prev]);
+    } catch (error) {
+      console.error("Card creation failed:", error);
+    }
+  };
+
+  return (
+    <div className="board-page">
+      <h1>{board?.title || "Board Page"}</h1>
+
+      <button className="create-button" onClick={() => setShowModal(true)}>
+        + Create New Card
+      </button>
+
+      {showModal && (
+        <CreateCardForm
+          onCreate={handleCreate}
+          onClose={() => setShowModal(false)}
+        />
+      )}
 
       <div className="card-grid">
         {cards.map((card) => (
