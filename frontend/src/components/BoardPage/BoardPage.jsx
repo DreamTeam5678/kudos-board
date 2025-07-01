@@ -38,9 +38,25 @@ const BoardPage = () => {
     setCards(updated);
   };
 
-  const handleDelete = (cardId) => {
-    const updated = cards.filter((card) => card.id !== cardId);
-    setCards(updated);
+  const handleDelete = async (cardId) => {
+    try {
+      const res = await fetch(`http://localhost:3000/boards/${id}/cards/${cardId}`, {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      if (!res.ok) {
+        const errorTxt = await res.text();
+        console.error("Error deleting card:", res.status, errorTxt);
+
+        return;
+      }
+      const data = await res.json();
+      setCards(prev => prev.filter(card => card.id !== cardId));
+    } catch (error) {
+      console.error("Error deleting card:", error);
+    }
   };
 
   const handleGifSearch = async () => {
