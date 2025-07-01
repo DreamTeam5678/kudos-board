@@ -35,51 +35,71 @@ const CreateCardForm = ({ onCreate, onClose }) => {
   };
 
   return (
-    <div className="create-card-modal">
-      <form className="card-form" onSubmit={handleSubmit}>
-        <input
-          className="form-input"
-          placeholder="Message (required)"
-          value={message}
-          onChange={(e) => setMessage(e.target.value)}
-          required
-        />
-        <input
-          className="form-input"
-          placeholder="Author (optional)"
-          value={author}
-          onChange={(e) => setAuthor(e.target.value)}
-        />
-
-        <div className="gif-search-group">
+    <div className="modal-backdrop">
+      <div className="create-card-modal">
+        <form className="card-form" onSubmit={handleSubmit}>
           <input
             className="form-input"
-            placeholder="Search GIFs"
-            value={gifSearch}
-            onChange={(e) => setGifSearch(e.target.value)}
+            placeholder="Message (required)"
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+            required
           />
-          <button type="button" className="search-button" onClick={handleGifSearch}>
-            Search
-          </button>
-        </div>
+          <input
+            className="form-input"
+            placeholder="Author (optional)"
+            value={author}
+            onChange={(e) => setAuthor(e.target.value)}
+          />
 
-        <div className="gif-results">
-          {gifResults.map((gif) => (
-            <img
-              key={gif.id}
-              src={gif.images.fixed_height_small.url}
-              alt="gif"
-              className={`gif-thumb ${selectedGif === gif.images.fixed_height_small.url ? "selected" : ""}`}
-              onClick={() => setSelectedGif(gif.images.fixed_height_small.url)}
+          <div className="gif-search-group">
+            <input
+              className="form-input"
+              placeholder="Search GIFs"
+              value={gifSearch}
+              onChange={(e) => setGifSearch(e.target.value)}
             />
-          ))}
-        </div>
+            <button
+              type="button"
+              className="search-button"
+              onClick={handleGifSearch}
+            >
+              Search
+            </button>
+          </div>
 
-        <div className="button-row">
-          <button type="submit" className="submit-button">Add</button>
-          <button type="button" className="cancel-button" onClick={onClose}>Cancel</button>
-        </div>
-      </form>
+          <div className="gif-results">
+            {gifResults.map((gif) => (
+              <img
+                key={gif.id}
+                src={gif.images.fixed_height_small.url}
+                alt="gif"
+                className={`gif-thumb ${
+                  selectedGif === gif.images.fixed_height_small.url
+                    ? "selected"
+                    : ""
+                }`}
+                onClick={() =>
+                  setSelectedGif(gif.images.fixed_height_small.url)
+                }
+              />
+            ))}
+          </div>
+
+          <div className="button-row">
+            <button type="submit" className="submit-button">
+              Add
+            </button>
+            <button
+              type="button"
+              className="cancel-button"
+              onClick={onClose}
+            >
+              Cancel
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
   );
 };
