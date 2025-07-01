@@ -18,6 +18,8 @@ app.get('/', (req, res) => {
 })
 
 app.use('/boards', boardsRouter);
+app.use('/boards', boardCardsRouter);
+
 
 
 /*app.get('/api/boards', async (req, res) => {

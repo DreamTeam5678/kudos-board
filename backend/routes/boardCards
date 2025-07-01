@@ -7,5 +7,7 @@ router.get('/:cardId', boardCardController.getBoardCardById);
 router.post('/', boardCardController.createBoardCard);
 router.put('/:cardId', boardCardController.updateBoardCard);
 router.delete('/:cardId', boardCardController.deleteBoardCard);
+router.post("/:cardId/upvote", boardCardController.upvoteBoardCard);
+
 
 module.exports = router;
