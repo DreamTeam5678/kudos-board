@@ -2,7 +2,28 @@ import React from 'react';
 import "./BoardCard.css";
 import { Link } from 'react-router-dom';
 
-function BoardCard({ board }) {
+function BoardCard({ board, onDelete }) {
+
+
+    const handleDelete = () => {
+        if (window.confirm("Are you sure you want to delete this board?")) {
+            fetch(`http://localhost:3000/boards/${board.id}`, {
+                method: "DELETE",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+            })
+                .then((res) => res.json())
+                .then((data) => {
+                    console.log("Deleted board:", data);
+                    onDelete(board.id);
+                })
+                .catch((error) => {
+                    console.error("Error deleting board:", error);
+                });
+        }
+    };
+
     return (
         <div className="board-card">
             <div className="board-card-image">
@@ -15,9 +36,7 @@ function BoardCard({ board }) {
                     <button className="board-card-button">
                         <Link to={`/board/${board.id}`}>View Board</Link>
                     </button>
-                    <button className="board-card-button">
-                        <Link to={`/board/${board.id}/edit`}>Delete Board</Link>
-                    </button>
+                    <button className="board-card-button"onClick = {() => handleDelete()}>Delete Board </button>
                 </div>
             </div>
         </div>

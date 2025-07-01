@@ -15,11 +15,29 @@ const CreateBoardForm = ({ onCreate, onClose }) => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!formData.title || !formData.description || !formData.image || !formData.category) return;
-    const newBoard = { ...formData, id: Date.now() };
-    onCreate(newBoard);
+    try {
+      const res = await fetch("http://localhost:3000/boards", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+       if (!res.ok) {
+        const errorTxt = await res.text();
+        console.error("Error creating board:", res.status, errorTxt);
+
+        return;
+      }
+      const data = await res.json();
+      onCreate(data);
+      onClose();
+    } catch (error) {
+      console.error("Error creating board:", error);
+    }
   };
 
   return (
