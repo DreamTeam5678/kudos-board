@@ -9,6 +9,7 @@ const boardsRouter = require('./routes/boards');
 const boardCardsRouter = require('./routes/boardCards');
 
 app.use(cors())
+app.use(express.json())
 app.listen(PORT, () => {
     console.log(`Server running on port http://localhost:${PORT}`)
 })
