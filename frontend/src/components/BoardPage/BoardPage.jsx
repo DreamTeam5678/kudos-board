@@ -73,24 +73,49 @@ const BoardPage = () => {
     setGifResults(json.data);
   };
 
-  const handleAddCard = (e) => {
+  const handleAddCard = async (e) => {
     e.preventDefault();
     if (!message || !selectedGif) return alert("Message and GIF required");
 
-    const newCard = {
-      id: Date.now(), // simple unique ID
+    // setting data to be sent to the server
+    const newCardData= {
       message,
       author: author || "Anonymous",
       gifUrl: selectedGif,
       upvotes: 0,
     };
+    
 
-    setCards([newCard, ...cards]);
-    setMessage("");
-    setAuthor("");
-    setGifSearch("");
-    setGifResults([]);
-    setSelectedGif(null);
+    try {
+      // Send POST request to create a new card
+      const res = await fetch(`http://localhost:3000/boards/${id}/cards`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(newCardData),
+      });
+      // Check if the request was successful
+      if (!res.ok) {
+        const errorTxt = await res.text();
+        console.error("Error creating card:", res.status, errorTxt);
+
+        return;
+      }
+      const data = await res.json();
+    
+      // Add the new card to exitsing cards
+      setCards((prevCards) => [data, ...prevCards]);
+      // Clear the form
+      setMessage("");
+      setAuthor("");
+      setGifSearch("");
+      setGifResults([]);
+      setSelectedGif(null);
+    } catch (error) {
+      console.error("Error creating card:", error);
+    }
+
   };
 
   return (

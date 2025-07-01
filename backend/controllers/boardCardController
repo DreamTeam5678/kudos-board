@@ -32,12 +32,14 @@ exports.getBoardCardById = async (req, res) => {
 // Create a new board card
 exports.createBoardCard = async (req, res) => {
     const { boardId } = req.params;
+    const { message, author, gifUrl } = req.body;
     try {
         const newBoardCard = await prisma.card.create({
             data: {
-                title: req.body.title,
-                description: req.body.description,
-                image: req.body.image,
+                message,
+                author,
+                gifUrl,
+                upvotes: 0,
                 boardId: parseInt(boardId),
             },
         });
