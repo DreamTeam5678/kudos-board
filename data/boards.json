@@ -2,22 +2,22 @@
     "boards": [
         {
             "id": 1,
-            "title": "Kudos Board",
-            "description": "Kudos Board is a place where you can share your appreciation for the things you love.",
+            "title": "Accomplishment Wall",
+            "description": "A virtual wall to celebrate team wins, milestones, and peer shout-outs.",
             "category": "celebration",
-            "image": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+            "image": "https://www.shutterstock.com/image-photo/success-teamwork-joint-achievement-goal-600nw-2265726729.jpg",
             "cards" : [
                 {
                     "id": 1,
-                    "message": "Thanks for your help!",
-                    "author": "Pamela",
+                    "message": "Celebrating my 10th year here!",
+                    "author": "Bob",
                     "gifUrl": "https://media.giphy.com/media/3o7aD2saalBwwftBIY/giphy.gif",
                     "upvotes": 0
                 },
                 {
                     "id": 2,
-                    "message": "Amazing job!",
-                    "author": "Senaf",
+                    "message": "Finished project 5 in record time!",
+                    "author": "Alice",
                     "gifUrl": "https://media.giphy.com/media/xT9IgG50Fb7Mi0prBC/giphy.gif",
                     "upvotes": 0
                 }
@@ -27,30 +27,29 @@
         },
         {
             "id": 2,
-            "title": "Appreciation Wall",
-            "description": "A virtual wall to celebrate team wins, milestones, and peer shout-outs.",
-            "category": "thank-you",
-            "image": "https://images.unsplash.com/photo-1607746882042-944635dfe10e?ixlib=rb-4.0.3&auto=format&fit=crop&w=700&q=80",
+            "title": "Get inspired!",
+            "description": "Keep on going! You're hard work is paying off!",
+            "category": "inspiration",
+            "image": "https://greatpeopleinside.com/wp-content/uploads/2017/09/inspiration-at-work.jpeg",
             "cards": [
                 {
                     "id": 1,
-                    "message": "Thanks for your help!",
-                    "author": "Pamela",
-                    "description": "Huge shoutout for solving that bug!",
+                    "message": "When you're feeling down, remember to take a break!",
+                    "author": "TJ",
                     "gifUrl": "https://media.giphy.com/media/l0HlBO7eyXzSZkJri/giphy.gif",
                     "upvotes" : 0
                     },
                     {
                     "id": 2,
                     "message": "Your design mockups blew everyone away!",
-                    "author": "Lauritz",
+                    "author": "Al",
                     "gifUrl": "https://media.giphy.com/media/xT0GqFqgobZYE9P2co/giphy.gif",
                     "upvotes": 3
                     },
                     {
                     "id": 3,
-                    "message": "Great energy in the brainstorm today!",
-                    "author": "Senaf",
+                    "message": "I'm so proud of myself for finishing this project!",
+                    "author": "Lucy",
                     "gifUrl": "https://media.giphy.com/media/xT0xem5I9kX3NDvUUU/giphy.gif",
                     "upvotes": 5
                 }
@@ -59,22 +58,22 @@
         
         {
             "id": 3,
-            "title": "Kudos Board",
-            "description": "Kudos Board is a place where you can share your appreciation for the things you love.",
-            "category": "thank-you",
-            "image": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+            "title": "Birthday Wishes",
+            "description": "Wish your teammates a Happy Birthday!",
+            "category": "celebration",
+            "image": "https://t3.ftcdn.net/jpg/11/24/42/40/360_F_1124424006_TwdhRYQLAq4z66SAHsi9QRXGhkpsxQJI.jpg",
             "cards" : [
                 {
                     "id": 1,
-                    "message": "Thanks for your help!",
-                    "author": "Pamela",
+                    "message": "Happy 48th Birthday, Susan!",
+                    "author": "Rick",
                     "gifUrl": "https://media.giphy.com/media/3o7aD2saalBwwftBIY/giphy.gif",
-                    "upvotes": 0
+                    "upvotes": 1
                 },
                     {
                     "id": 2,
-                    "message": "Amazing job!",
-                    "author": "Senaf",
+                    "message": "Wishing you a Happy Birthday, Peter!",
+                    "author": "Lindsay",
                     "gifUrl": "https://media.giphy.com/media/xT9IgG50Fb7Mi0prBC/giphy.gif",
                     "upvotes": 0
                 }
@@ -82,35 +81,185 @@
         },
         {
             "id": 4,
-            "title": "Appreciation Wall",
-            "description": "A virtual wall to celebrate team wins, milestones, and peer shout-outs.",
+            "title": "Shoutouts!",
+            "description": "Shout out your teammates for their help!",
             "category": "thank-you",
-            "image": "https://images.unsplash.com/photo-1607746882042-944635dfe10e?ixlib=rb-4.0.3&auto=format&fit=crop&w=700&q=80",
+            "image": "https://blogimage.vantagecircle.com/content/images/2023/07/employee-shout-outs.png",
             "cards": [
                 {
                     "id": 1,
-                    "message": "Thanks for your help!",
+                    "message": "Thanks for your help, Lauritz!",
                     "author": "Pamela",
-                    "description": "Huge shoutout for solving that bug!",
                     "gifUrl": "https://media.giphy.com/media/l0HlBO7eyXzSZkJri/giphy.gif",
                     "upvotes" : 0
                     },
                     {
                     "id": 2,
-                    "message": "Your design mockups blew everyone away!",
-                    "author": "Lauritz",
+                    "message": "Thanks for helping me fix that bug, Pamela!",
+                    "author": "Senaf",
                     "gifUrl": "https://media.giphy.com/media/xT0GqFqgobZYE9P2co/giphy.gif",
                     "upvotes": 3
                     },
                     {
                     "id": 3,
-                    "message": "Great energy in the brainstorm today!",
-                    "author": "Senaf",
+                    "message": "Thank you for that suggestion yesterday, Senaf!",
+                    "author": "Lauritz",
                     "gifUrl": "https://media.giphy.com/media/xT0xem5I9kX3NDvUUU/giphy.gif",
                     "upvotes": 5
                 }
             ]
 
+        },
+        {
+            "id": 5,
+            "title": "Inspiring Notes",
+            "description": "Share your inspiring notes with your teammates!",
+            "category": "inspiration",
+            "image": "https://media.istockphoto.com/id/1403846937/photo/imagination-inspiration-ideas-innovation-creativity-motivation-technology.jpg?s=612x612&w=0&k=20&c=g_k2jXrboQ-3z8TiPQbsR_WwPPk0AKNAz8I8WarQVnE=",
+            "cards": [
+                {
+                    "id": 1,
+                    "message": "You're Doing Great!",
+                    "author": "Lucy",
+                    "gifUrl": "https://media.giphy.com/media/xT0xem5I9kX3NDvUUU/giphy.gif",
+                    "upvotes": 5
+                },
+                {
+                    "id": 2,
+                    "message": "Keep it going, team!",
+                    "author": "Max",
+                    "gifUrl": "https://media.giphy.com/media/xT0xem5I9kX3NDvUUU/giphy.gif",
+                    "upvotes": 5
+                },
+                {
+                    "id": 3,
+                    "message": "Great work on this project, everyone!",
+                    "author": "Lola",
+                    "gifUrl": "https://media.giphy.com/media/xT0xem5I9kX3NDvUUU/giphy.gif",
+                    "upvotes": 5
+                }
+            ] 
+        },
+        {
+            "id": 6,
+            "title": "Celebrate Your Wins!",
+            "description": "Celebrate each other on big days!",
+            "category": "celebration",
+            "image": "https://www.teamly.com/blog/wp-content/uploads/2022/01/Virtual-Team-Celebration-Ideas.png",
+            "cards": [
+                {
+                    "id": 1,
+                    "message": "Congratulations, team!",
+                    "author": "Lucy",
+                    "gifUrl": "https://media.giphy.com/media/xT0xem5I9kX3NDvUUU/giphy.gif",
+                    "upvotes": 5
+                },
+                {
+                    "id": 2,
+                    "message": "You're doing great, everyone!",
+                    "author": "Max",
+                    "gifUrl": "https://media.giphy.com/media/xT0xem5I9kX3NDvUUU/giphy.gif",
+                    "upvotes": 5
+                },
+                {
+                    "id": 3,
+                    "message": "Great job on this project, everyone!",
+                    "author": "Lola",
+                    "gifUrl": "https://media.giphy.com/media/xT0xem5I9kX3NDvUUU/giphy.gif",
+                    "upvotes": 5
+                }
+            ]
+            
+        },
+        {
+            "id": 7,
+            "title": "Anonymous Thank You's",
+            "description": "Share your appreciation with your teammates!",
+            "category": "thank-you",
+            "image": "https://img-cdn.inc.com/image/upload/f_webp,q_auto,c_fit/images/panoramic/getty_469566889_105923.jpg",
+            "cards": [
+                {
+                    "id": 1,
+                    "message": "Thanks for your help, Lauritz!",
+                    "author": "Anonymous",
+                    "gifUrl": "https://media.giphy.com/media/l0HlBO7eyXzSZkJri/giphy.gif",
+                    "upvotes" : 0
+                    },
+                    {
+                    "id": 2,
+                    "message": "Thanks for helping me fix that bug, Pamela!",
+                    "author": "Anonymous",
+                    "gifUrl": "https://media.giphy.com/media/xT0GqFqgobZYE9P2co/giphy.gif",
+                    "upvotes": 3
+                    },
+                    {
+                    "id": 3,
+                    "message": "Thank you for that suggestion yesterday",
+                    "author": "Anonymous",
+                    "gifUrl": "https://media.giphy.com/media/xT0xem5I9kX3NDvUUU/giphy.gif",
+                    "upvotes": 5
+                }
+            ]
+        },
+        {
+            "id": 8,
+            "title": "Inspire Your Teammates",
+            "description": "Share your inspiring notes with your teammates!",
+            "category": "inspiration",
+            "image": "https://assets.entrepreneur.com/content/3x2/2000/20190812184546-GettyImages-1009803562.jpeg?format=pjeg&auto=webp&crop=16:9",
+            "cards": [
+                {
+                    "id": 1,
+                    "message": "You're Doing Great!",
+                    "author": "Lucy",
+                    "gifUrl": "https://media.giphy.com/media/xT0xem5I9kX3NDvUUU/giphy.gif",
+                    "upvotes": 5
+                },
+                {
+                    "id": 2,
+                    "message": "Keep it going, team!",
+                    "author": "Max",
+                    "gifUrl": "https://media.giphy.com/media/xT0xem5I9kX3NDvUUU/giphy.gif",
+                    "upvotes": 5
+                },
+                {
+                    "id": 3,
+                    "message": "Great work on this project, everyone!",
+                    "author": "Lola",
+                    "gifUrl": "https://media.giphy.com/media/xT0xem5I9kX3NDvUUU/giphy.gif",
+                    "upvotes": 5
+                }
+            ]
+        },
+        {
+            "id": 9,
+            "title": "General Appreciation",
+            "description": "Share your appreciation with your teammates!",
+            "category": "thank-you",
+            "image": "https://media.licdn.com/dms/image/v2/D4D12AQFS864F8R6NYw/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1676972400667?e=2147483647&v=beta&t=_pR-FsaTgwM5Ik2f19okceUVbyZisgy0NoMpfF08FJQ",
+            "cards": [
+                {
+                    "id": 1,
+                    "message": "Thanks for your help, Lauritz!",
+                    "author": "Anonymous",
+                    "gifUrl": "https://media.giphy.com/media/l0HlBO7eyXzSZkJri/giphy.gif",
+                    "upvotes" : 0
+                    },
+                    {
+                    "id": 2,
+                    "message": "Thanks for helping me fix that bug, Pamela!",
+                    "author": "Anonymous",
+                    "gifUrl": "https://media.giphy.com/media/xT0GqFqgobZYE9P2co/giphy.gif",
+                    "upvotes": 3
+                    },
+                    {
+                    "id": 3,
+                    "message": "Thank you for that suggestion yesterday",
+                    "author": "Anonymous",
+                    "gifUrl": "https://media.giphy.com/media/xT0xem5I9kX3NDvUUU/giphy.gif",
+                    "upvotes": 5
+                }
+            ]   
         }
     ]       
 }
