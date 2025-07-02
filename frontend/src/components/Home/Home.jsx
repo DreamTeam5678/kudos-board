@@ -16,7 +16,11 @@ const Home = () => {
   // Initial fetch
   const fetchBoards = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/boards");
+      const res = await axios.get("http://localhost:3000/boards", {
+        params : {
+          category: selectedCategory
+        }
+      });
       setBoards(res.data);
     } catch (error) {
       console.error("Error fetching boards:", error);
@@ -25,7 +29,7 @@ const Home = () => {
 
   useEffect(() => {
     fetchBoards();
-  }, []);
+  }, [selectedCategory]);
 
   // Polling every 5 seconds for real-time updates
   useEffect(() => {
@@ -34,26 +38,27 @@ const Home = () => {
     }, 5000); // 5 seconds
 
     return () => clearInterval(interval); // Clean up on unmount
-  }, []);
+  }, [selectedCategory]);
 
   // Filtering logic
   useEffect(() => {
     const filtered = Array.isArray(boards)
       ? boards.filter((board) => {
-          const matchCategory =
-            selectedCategory === "all" || board.category === selectedCategory;
+          //const matchCategory =
+            //selectedCategory === "all" || board.category === selectedCategory;
           const matchSearch = board.title
             .toLowerCase()
             .includes(searchQuery.toLowerCase());
-          return matchCategory && matchSearch;
+          return /*matchCategory && */ matchSearch;
         })
       : [];
     setFilteredBoards(filtered);
-  }, [boards, selectedCategory, searchQuery]);
+  }, [boards, /*selectedCategory,*/ searchQuery]);
 
   // Handle new board creation locally
   const handleCreateBoard = (newBoard) => {
-    setBoards((prevBoards) => [...prevBoards, newBoard]);
+    //setBoards((prevBoards) => [...prevBoards, newBoard]);
+    fetchBoards();
     setShowForm(false);
   };
 
