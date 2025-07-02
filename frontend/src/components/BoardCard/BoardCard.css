@@ -9,10 +9,16 @@
   transition: transform 0.3s ease;
   font-family: 'Segoe UI', sans-serif;
   position: relative;
+  box-shadow: 15px 15px 15px grey;
+}
+
+.board-card:hover {
+  transform: scale(2);
+  cursor: pointer;
 }
 
 .board-card::after {
-     content: "";
+    content: "";
     position: absolute;
     bottom: 0;
     right: 0;
@@ -20,6 +26,7 @@
     height: 40px;
     background: linear-gradient(135deg, transparent 50%, rgba(0,0,0,0.1) 50%);
     border-bottom-right-radius: 6px;
+
 }
 
 
@@ -30,26 +37,92 @@
   margin-bottom: 1rem;
 }
 
-.board-card-image img {
+.board-card-image .im {
   width: 100%;
   border-radius: 6px;
   object-fit: cover;
-  height: 200px;
+  height: 220px;
+  margin-top: -5px;
+  flex: 1;  
+}
+
+.tack img{
+  width: 20%;
+  height: auto;
+  position: absolute;
+  top: -15px;
+  left: 140px;
 }
 
 .board-card-content {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  align-items: center;  
+  justify-content: center;
+
 }
 
 .board-card-title {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 600;
+  margin: 5px;
+  color: rgb(65, 64, 64);
+  text-decoration: underline;
 }
 
 .board-card-description {
-  font-size: 0.9rem;
-  color: #444;
+  font-size: 0.8rem;
+  color: rgb(86, 86, 81);
+  margin-top: -8px;
+  text-align: center;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  
+
 }
+
+.desc {
+  display: flex;
+  flex-direction: column;  /* Make title and description inline */
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(130, 130, 130, 0.1); /* semi-transparent grey */
+  border-radius: 200px;
+  padding: 0.5rem 2rem; 
+  gap: 0.6rem; /* space between title and description */
+  margin-top: -0.5rem;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  border: 3px dotted floralwhite;
+}
+
+.board-card-actions {
+  display: flex;
+  gap:15rem;
+  margin-top: -70px;
+  padding-left: 12px;
+  justify-content: space-evenly;
+}
+
+.board-card-button {
+  background-color: rgba(255, 244, 244, 0.00000000001);
+  border: none;
+  color: rgb(65, 64, 64);
+  border-radius: 500px;
+  padding: 0px;
+
+}
+
+.board-card-button:hover {
+  color: red;
+  cursor: pointer;
+  transition: 0.3s;
+  transform: scale(1.3);
+}
+
+.board-card-button img {
+  width: 100px;
+  opacity: 0.6;
+}
+
+
+
 
