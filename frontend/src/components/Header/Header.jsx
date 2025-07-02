@@ -3,6 +3,7 @@ import "./Header.css";
 import { FaSearch, FaTimes } from "react-icons/fa";
 import logo from "/src/assets/logo2.png"; 
 
+
 const categories = [
   { label: "All", value: "all" },
   { label: "Celebration", value: "celebration" },
@@ -25,12 +26,12 @@ const Header = ({ searchQuery, setSearchQuery, selectedCategory, setSelectedCate
           <FaSearch className="search-icon" />
           <input
             type="text"
-            placeholder="Pin to Board ✎ᝰ..."
+            placeholder="Search..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
           />
         </div>
-        <button className = "search-button" onClick={() => setSearchQuery(searchQuery)}>
+        <button className = "search" onClick={() => setSearchQuery(searchQuery)}>
             Search
         </button>
         {searchQuery && (
@@ -54,7 +55,7 @@ const Header = ({ searchQuery, setSearchQuery, selectedCategory, setSelectedCate
 
       <div className="create-board">
         <button className="create-board-button" onClick={onCreateClick} > 
-            + Create New Board
+            +  Pin to Board ✎ᝰ...
         </button>
       </div>
     </header>
