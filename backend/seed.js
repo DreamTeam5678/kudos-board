@@ -12,7 +12,7 @@ async function main() {
         title: board.title,
         description: board.description,
         image: board.image,
-        category: board.category,
+        category: board.category.toLowerCase().replace(/\s+/g, '-'),
       },
     });
 
