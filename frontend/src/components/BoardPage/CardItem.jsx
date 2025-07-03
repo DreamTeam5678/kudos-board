@@ -66,7 +66,7 @@ const CardItem = ({ card, onDelete, onUpvote }) => {
 export default CardItem;
 */
 import React from "react";
-import "./Boardpage.css"; // Import Boardpage.css for styling
+import "./BoardPage.css"; // Import Boardpage.css for styling
 import pin from "../../assets/pin.png";
 import trash from "../../assets/trash.png";
 // No longer need to import 'eye' if using emoji directly
