@@ -1,326 +1,379 @@
 /*
-:root {
- font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
- line-height: 1.5;
- font-weight: 400;
-
-
- color-scheme: light dark;
- color: rgba(255, 255, 255, 0.87);
- background-color: #242424;
-
-
- font-synthesis: none;
- text-rendering: optimizeLegibility;
- -webkit-font-smoothing: antialiased;
- -moz-osx-font-smoothing: grayscale;
-}
-
-
-a {
- font-weight: 500;
- color: #646cff;
- text-decoration: inherit;
-}
-a:hover {
- color: #535bf2;
-}
-
-
-body {
- margin: 0;
- display: flex;
- place-items: center;
- min-width: 320px;
- min-height: 100vh;
-}
-
-
-h1 {
- font-size: 3.2em;
- line-height: 1.1;
-}
-
-/*
-button {
-  background-color: #f0f0f0;
-  color: #000;
-}
-
-
-button {
- border-radius: 8px;
- border: 1px solid transparent;
- padding: 0.6em 1.2em;
- font-size: 1em;
- font-weight: 500;
- font-family: inherit;
- background-color: #f0f0f0;
- cursor: pointer;
- transition: border-color 0.25s;
-}
-button:hover {
- border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
- outline: 4px auto -webkit-focus-ring-color;
-}
-
-
-.add-card-form {
-  max-width: 600px;
-  margin: 2rem auto;
-  padding: 1.5rem;
-  border-radius: 12px;
-  background-color: #f9fafb;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-}
-
-.form-title {
-  font-size: 1.25rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
-}
-
-.form-input {
-  width: 100%;
-  padding: 0.75rem;
-  margin-bottom: 1rem;
-  border: 1px solid #d1d5db;
-  border-radius: 8px;
-  font-size: 1rem;
-}
-
-.gif-search-group {
-  display: flex;
-  gap: 0.5rem;
-}
-
-.search-button,
-.submit-button {
-  padding: 0.6rem 1.25rem;
-  border: none;
-  border-radius: 8px;
-  font-weight: 600;
-  cursor: pointer;
-  background-color: #3b82f6;
-  color: white;
-}
-
-.search-button:hover {
-  background-color: #2563eb;
-}
-
-.submit-button {
-  background-color: #10b981;
-  margin-top: 1rem;
-}
-
-.submit-button:hover {
-  background-color: #059669;
-}
-
-.gif-results {
-  display: flex;
-  gap: 0.5rem;
-  flex-wrap: wrap;
-  margin-top: 1rem;
-}
-
-.gif-thumb {
-  width: 100px;
-  border: 2px solid transparent;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: 0.2s;
-}
-
-.gif-thumb.selected {
-  border-color: #3b82f6;
-}
-
-.card-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
-  margin-top: 2rem;
-}
-
-.card {
-  background: white;
-  border-radius: 12px;
-  padding: 1rem;
-  border: 1px solid #e5e7eb;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.04);
-}
-
-.card img {
-  width: 100%;
-  border-radius: 6px;
-}
-
-.card button {
-  margin-top: 0.5rem;
-  margin-right: 0.5rem;
-  padding: 0.5rem 1rem;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: 500;
-}
-
-.upvote-button {
-  background-color: #3b82f6;
-  color: white;
-}
-
-.delete-button {
-  background-color: #ef4444;
-  color: white;
-}
-:root {
-  background-color: #ffffff !important;
-  color: #000000 !important;
-  color-scheme: light;
-}
-
-.gif-results {
-  display: flex;
-  gap: 0.5rem;
-  flex-wrap: wrap;
-  margin-top: 1rem;
-}
-
-.gif-thumb {
-  width: 100px;
-  border: 2px solid transparent;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: 0.2s;
-}
-
-.gif-thumb.selected {
-  border-color: #3b82f6;
-}
-
-.selected-gif-preview {
-  margin-top: 1rem;
-}
-
-.selected-gif-preview img {
-  width: 150px;
-  border-radius: 8px;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
-}
-
-.cancel-button {
-  background-color: #e5e5e5;
-  color: #333;
-}
-
-.cancel-button:hover {
-  background-color: #d4d4d4;
-}
-
-*/
-/* Reuse the modal + form styling from your main page */
 .board-page {
-  max-width: 900px;
-  margin: 2rem auto;
-  padding: 0 1rem;
-  font-family: "Segoe UI", sans-serif;
+  padding: 40px 20px;
+  background-color: #fffaf0;
+  min-height: 100vh;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
 }
 
 .board-page h1 {
-  font-size: 2rem;
-  text-align: center;
-  margin-bottom: 1.5rem;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  font-weight: bold;
 }
 
-
-.card-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 24px; 
-  margin-top: 32px;
-  padding: 0 16px;
-  justify-items: center;
-}
-
-
-
-.card {
-  background-color: #ffffff;
-  border: 1px solid #e5e7eb;
-  border-radius: 12px;
-  padding: 1rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  transition: transform 0.2s;
-}
-
-.card:hover {
-  transform: translateY(-4px);
-}
-
-
-
-
-.card h3 {
-  font-size: 1.1rem;
-  margin-bottom: 0.5rem;
-}
-
-.card p {
-  margin: 0.25rem 0;
-}
-
-.gif-display {
-  width: 100%;
-  border-radius: 8px;
-  margin: 0.75rem 0;
-}
-
-.card button {
-  margin-top: 0.5rem;
-  padding: 0.5rem 1rem;
+.board-page .create-button {
+  background-color: #996e2f;
+  color: white;
+  padding: 10px 20px;
   border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 40px;
+  transition: background 0.3s ease;
+}
+
+.board-page .create-button:hover {
+  background-color: #333;
+}
+
+
+.board-page .card-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+
+
+board-page .board-card {
+  padding: 2rem;
+  margin: 1.2rem; 
   border-radius: 6px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  height: 300px;
+  width: 300px;
+  transform-origin: center;
+  transition: transform 0.3s ease;
+  font-family: 'Segoe UI', sans-serif;
+  position: relative;
+  box-shadow: 15px 15px 15px grey;
+}
+
+.board-card:hover {
+  transform: scale(1.05);
   cursor: pointer;
+}
+
+.board-card::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, transparent 50%, rgba(0,0,0,0.1) 50%);
+  border-bottom-right-radius: 6px;
+}
+
+.board-card-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.board-card-image .im {
+  width: 100%;
+  border-radius: 6px;
+  object-fit: cover;
+  height: 220px;
+  margin-top: -5px;
+  flex: 1;
+}
+
+.tack img {
+  width: 20%;
+  height: auto;
+  position: absolute;
+  top: -15px;
+  left: 140px;
+  z-index: 1; 
+}
+
+.board-card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.board-card-title {
+  font-size: 1.1rem;
   font-weight: 600;
-  font-size: 0.85rem;
+  margin: 5px;
+  color: rgb(65, 64, 64);
+  text-decoration: underline;
 }
 
-.card button:first-of-type {
-  background-color: #10b981;
-  color: white;
-  margin-right: 0.5rem;
+.board-card-description {
+  font-size: 0.8rem;
+  color: rgb(86, 86, 81);
+  margin-top: -8px;
+  text-align: center;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-.card .delete-button {
-  background-color: #ef4444;
-  color: white;
+.desc {
+  position: relative;
+  z-index: 1;
+  padding: 0.5rem 2rem 1.5rem; 
+  margin-top: -0.5rem;
+  background-color: rgba(130, 130, 130, 0.1);
+  border-radius: 200px;
+  gap: 0.6rem;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  border: 3px dotted floralwhite;
 }
 
-.create-button {
-  display: block;
-  margin: 0 auto 2rem;
-  background-color: #6366f1;
-  color: white;
+.board-card-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: calc(100% - 3rem);
+  padding: 0 1.5rem;
+  position: absolute;
+  bottom: 1.2rem;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+
+
+.board-card-actions button {
+  max-height: 30px;
+  background-color: rgba(255, 244, 244, 0.00000000001);
   border: none;
-  padding: 0.75rem 1.5rem;
+  color: rgb(65, 64, 64);
+  border-radius: 500px;
+  padding: 0px;
+}
+
+.board-card-button {
+  background-color: rgba(255, 244, 244, 0.00000000001);
+  border: none;
+  color: rgb(65, 64, 64);
+  border-radius: 500px;
+  padding: 0px;
+}
+
+.board-card-button:hover {
+  color: red;
+  cursor: pointer;
+  transition: 0.3s;
+  transform: scale(1.3);
+}
+
+.board-card-button img {
+  width: 100px; 
+  opacity: 0.6;
+}
+
+.heart-container {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 20px;
+}
+
+
+.heart-container .heart-icon {
+  margin: 0px;
+  padding: 0;
+}
+
+.heart-container .upvote-count {
+  font-size: 15px;
+  margin: 0;
+  padding: 0;
+}
+
+*/
+
+.board-page {
+  padding: 40px 20px;
+  background-color: #fffaf0;
+  min-height: 100vh;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+}
+
+.board-page h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.board-page .create-button {
+  background-color: #996e2f;
+  color: white;
+  padding: 10px 20px;
+  border: none;
   border-radius: 8px;
-  font-size: 1rem;
-  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 40px;
+  transition: background 0.3s ease;
+}
+
+.board-page .create-button:hover {
+  background-color: #333;
+}
+
+.board-page .card-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.board-page .board-card {
+  padding: 2rem;
+  margin: 1.2rem; 
+  border-radius: 6px;
+  height: 300px;
+  width: 300px;
+  transform-origin: center;
+  transition: transform 0.3s ease;
+  font-family: 'Segoe UI', sans-serif;
+  position: relative;
+  box-shadow: 15px 15px 15px grey;
+}
+
+.board-page .board-card:hover {
+  transform: scale(1.05);
   cursor: pointer;
 }
 
-.create-button-row button:first-child {
-  background-color: #6e76ff;
-  color: white;
-  margin-right: 0.5rem;
+.board-page .board-card::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, transparent 50%, rgba(0,0,0,0.1) 50%);
+  border-bottom-right-radius: 6px;
 }
 
-.create-button:hover {
-  background-color: #4f46e5;
+.board-page .board-card-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.board-page .board-card-image .im {
+  width: 100%;
+  border-radius: 6px;
+  object-fit: cover;
+  height: 220px;
+  margin-top: -5px;
+  flex: 1;
+}
+
+.board-page .tack img {
+  width: 20%;
+  height: auto;
+  position: absolute;
+  top: -15px;
+  left: 140px;
+  z-index: 1; 
+}
+
+.board-page .board-card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.board-page .board-card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 5px;
+  color: rgb(65, 64, 64);
+  text-decoration: underline;
+}
+
+.board-page .board-card-description {
+  font-size: 0.8rem;
+  color: rgb(86, 86, 81);
+  margin-top: -8px;
+  text-align: center;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.board-page .desc {
+  position: relative;
+  z-index: 1;
+  padding: 0.5rem 2rem 1.5rem;
+  margin-top: -0.5rem;
+  background-color: rgba(130, 130, 130, 0.1);
+  border-radius: 200px;
+  gap: 0.6rem;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  border: 3px dotted floralwhite;
+}
+
+.board-page .board-card-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.8rem;
+  padding: 0 1.2rem;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+.board-page .board-card-actions button {
+  max-height: 30px;
+  background-color: transparent;
+  border: none;
+  color: rgb(65, 64, 64);
+  border-radius: 500px;
+  padding: -12px;
+}
+
+.board-page .board-card-button {
+  background-color: transparent;
+  border: none;
+  color: rgb(65, 64, 64);
+  border-radius: 500px;
+  padding: 0px;
+}
+
+.board-page .board-card-button:hover {
+  color: red;
+  cursor: pointer;
+  transition: 0.3s;
+  transform: scale(1.3);
+}
+
+.board-page .board-card-button img {
+  width: 100px; 
+  opacity: 0.6;
+}
+
+.board-page .heart-container {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 16px;
+}
+
+.board-page .heart-container .heart-icon {
+  margin: 0;
+  padding: 0;
+}
+
+.board-page .heart-container .upvote-count {
+  font-size: 15px;
+  margin: 0;
+  padding: 0;
 }
