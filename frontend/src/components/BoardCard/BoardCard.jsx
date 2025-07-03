@@ -72,6 +72,7 @@ function BoardCard({ board, onDelete, onDragStart}) {
                 <div className = "desc">
                 <p className = "board-card-title">{board.title}</p>
                 <p className = "board-card-description">{board.description}</p>
+                <p className = "board-card-author">By: {board.author}</p>
                 </div>
                 <div className="board-card-actions">
                     <button className="board-card-button">
