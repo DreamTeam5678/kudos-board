@@ -9,6 +9,7 @@ async function main() {
   for (const board of boards.boards) {
     const newBoard = await prisma.board.create({
       data: {
+        author: board.author || "Anonymous",
         title: board.title,
         description: board.description,
         image: board.image,

@@ -148,6 +148,7 @@
   align-items: center;
   gap: 6px;
   font-size: 16px;
+  margin-top: -7px;
 }
 
 .board-page .heart-container .heart-icon {

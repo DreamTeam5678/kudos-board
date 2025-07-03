@@ -2,6 +2,7 @@
     "boards": [
         {
             "id": 1,
+            "author": null,
             "title": "Accomplishment Wall",
             "description": "A virtual wall to celebrate team wins, milestones, and peer shout-outs.",
             "category": "celebration",
@@ -27,6 +28,7 @@
         },
         {
             "id": 2,
+            "author": "Brian",
             "title": "Get inspired!",
             "description": "Keep on going! You're hard work is paying off!",
             "category": "inspiration",
@@ -58,6 +60,7 @@
         
         {
             "id": 3,
+            "author": "Max",
             "title": "Birthday Wishes",
             "description": "Wish your teammates a Happy Birthday!",
             "category": "celebration",
@@ -81,6 +84,7 @@
         },
         {
             "id": 4,
+            "author": null,
             "title": "Shoutouts!",
             "description": "Shout out your teammates for their help!",
             "category": "thank-you",
@@ -112,6 +116,7 @@
         },
         {
             "id": 5,
+            "author": null,
             "title": "Inspiring Notes",
             "description": "Share your inspiring notes with your teammates!",
             "category": "inspiration",
@@ -142,6 +147,7 @@
         },
         {
             "id": 6,
+            "author": "Patsy",
             "title": "Celebrate Your Wins!",
             "description": "Celebrate each other on big days!",
             "category": "celebration",
@@ -173,6 +179,7 @@
         },
         {
             "id": 7,
+            "author": null,
             "title": "Anonymous Thank You's",
             "description": "Share your appreciation with your teammates!",
             "category": "thank-you",
@@ -203,6 +210,7 @@
         },
         {
             "id": 8,
+            "author": null,
             "title": "Inspire Your Teammates",
             "description": "Share your inspiring notes with your teammates!",
             "category": "inspiration",
@@ -233,6 +241,7 @@
         },
         {
             "id": 9,
+            "author": "Jim",
             "title": "General Appreciation",
             "description": "Share your appreciation with your teammates!",
             "category": "thank-you",
