@@ -55,7 +55,6 @@ const CreateBoardForm = ({ onCreate, onClose }) => {
           <option value="celebration">Celebration</option>
           <option value="thank-you">Thank You</option>
           <option value="inspiration">Inspiration</option>
-          <option value="recent">Recent</option>
         </select>
         <input name="image" placeholder="Image URL" value={formData.image} onChange={handleChange} required />
         <input name="author" placeholder="Author (optional)" value={formData.author} onChange={handleChange} />

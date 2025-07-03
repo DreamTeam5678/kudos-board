@@ -1,10 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Gluten:wght@100..900&display=swap');
 .modal-backdrop {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.4); /* dark translucent background */
+  background: rgba(0, 0, 0, 0.4); 
   display: flex;
   align-items: center;
   justify-content: center;
@@ -12,7 +13,7 @@
 }
 
 .create-card-modal {
-  background: white;
+  background: rgba(128, 128, 128, 0.731);
   padding: 2rem;
   border-radius: 12px;
   width: 90%;
@@ -29,6 +30,7 @@
   border-radius: 8px;
   border: 1px solid #ccc;
   font-size: 1rem;
+  font-family: 'Gluten', cursive;
 }
 
 .button-row {
@@ -38,7 +40,7 @@
 }
 
 .submit-button {
-  background-color: #6366f1;
+  background-color: rgb(179, 120, 38);
   color: white;
   border: none;
   padding: 0.75rem 1.5rem;
@@ -63,7 +65,7 @@
   border-radius: 8px;
   font-weight: 600;
   cursor: pointer;
-  background-color: #3b82f6;
+  background-color: rgb(137, 96, 34);
   color: white;
   margin-left: 0.5rem;
 }
