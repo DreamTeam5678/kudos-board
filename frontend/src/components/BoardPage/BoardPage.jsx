@@ -180,7 +180,7 @@ const BoardPage = () => {
   const [board, setBoard] = useState(null);
   const [cards, setCards] = useState([]);
   const [showModal, setShowModal] = useState(false);
-
+ 
   const fetchBoard = async () => {
     try {
       const res = await fetch(`http://localhost:3000/boards/${id}`);
@@ -278,3 +278,4 @@ const BoardPage = () => {
 
 };
 export default BoardPage;
+
