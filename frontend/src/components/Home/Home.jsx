@@ -1,3 +1,4 @@
+import ThemeToggle from "../ThemeToggle/ThemeToggle"
 import React, { useState, useEffect } from "react";
 import Header from "../Header/Header";
 import BoardGrid from "../BoardGrid/BoardGrid";

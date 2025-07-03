@@ -168,11 +168,13 @@ const BoardPage = () => {
 
 export default BoardPage;
 */
+import ThemeToggle from "../ThemeToggle/ThemeToggle"
 import { useParams } from "react-router-dom";
-import React, { useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import CreateCardForm from "./CreateCardForm";
 import "./BoardPage.css";
 import CardItem from "./CardItem";
+
 const GIPHY_API_KEY = "jKqO4xyMXqOJhKNVdfYCwohtHEj1q255";
 
 const BoardPage = () => {
@@ -180,7 +182,7 @@ const BoardPage = () => {
   const [board, setBoard] = useState(null);
   const [cards, setCards] = useState([]);
   const [showModal, setShowModal] = useState(false);
- 
+
   const fetchBoard = async () => {
     try {
       const res = await fetch(`http://localhost:3000/boards/${id}`);
@@ -188,7 +190,7 @@ const BoardPage = () => {
       setBoard(json);
       setCards(json.cards || []);
     } catch (error) {
-        console.error("Error fetching board:", error);
+      console.error("Error fetching board:", error);
     }
   };
 
@@ -197,12 +199,12 @@ const BoardPage = () => {
   }, [id]);
 
   useEffect(() => {
-      const interval = setInterval(() => {
-        fetchBoard();
-      }, 5000); // 5 seconds
-  
-      return () => clearInterval(interval); // Clean up on unmount
-    }, []);
+    const interval = setInterval(() => {
+      fetchBoard();
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   const handleUpvote = async (cardId) => {
     try {
@@ -249,33 +251,35 @@ const BoardPage = () => {
   };
 
   return (
-  <div className="board-page">
-    <h1>{board?.title || "Board Page"}</h1>
+    <div className="board-page">
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+        <h1>{board?.title || "Board Page"}</h1>
+        <ThemeToggle />
+      </div>
 
-    <button className="create-button" onClick={() => setShowModal(true)}>
-      + Create New Card
-    </button>
+      <button className="create-button" onClick={() => setShowModal(true)}>
+        + Create New Card
+      </button>
 
-    {showModal && (
-      <CreateCardForm
-        onCreate={handleCreate}
-        onClose={() => setShowModal(false)}
-      />
-    )}
-
-    <div className="card-grid">
-      {cards.map((card) => (
-        <CardItem
-          key={card.id}
-          card={card}
-          onDelete={handleDelete}
-          onUpvote={handleUpvote}
+      {showModal && (
+        <CreateCardForm
+          onCreate={handleCreate}
+          onClose={() => setShowModal(false)}
         />
-      ))}
+      )}
+
+      <div className="card-grid">
+        {cards.map((card) => (
+          <CardItem
+            key={card.id}
+            card={card}
+            onDelete={handleDelete}
+            onUpvote={handleUpvote}
+          />
+        ))}
+      </div>
     </div>
-  </div> 
   );
-
 };
-export default BoardPage;
 
+export default BoardPage;

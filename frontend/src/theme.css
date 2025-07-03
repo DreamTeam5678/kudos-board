@@ -1,0 +1,37 @@
+/* Light mode (default) */
+:root {
+  --bg-color: #ffffff;
+  --text-color: #121212;
+  --accent-color: #deb887;
+}
+
+/* Dark mode override */
+[data-theme='dark'] {
+  --bg-color: #121212;
+  --text-color: #ffffff;
+  --accent-color: #8b7355; /* A darker brown */
+}
+
+/* Global body styles */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Theme toggle button */
+.theme-toggle-btn {
+  margin: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: transparent;
+  border: 1px solid var(--text-color);
+  color: var(--text-color);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.theme-toggle-btn:hover {
+  background-color: var(--text-color);
+  color: var(--bg-color);
+}

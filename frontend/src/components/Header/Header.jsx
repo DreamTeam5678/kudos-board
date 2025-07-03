@@ -1,25 +1,29 @@
 import React from "react";
-import "./Header.css";
 import { FaSearch, FaTimes } from "react-icons/fa";
-import logo from "/src/assets/logo2.png"; 
-
+import logo from "/src/assets/logo2.png";
+import ThemeToggle from "../ThemeToggle/ThemeToggle";
+import "./Header.css";
 
 const categories = [
   { label: "All", value: "all" },
   { label: "Celebration", value: "celebration" },
   { label: "Thank You", value: "thank-you" },
   { label: "Inspiration", value: "inspiration" },
-  { label: "Recent", value: "recent" }
+  { label: "Recent", value: "recent" },
 ];
 
-
-const Header = ({ searchQuery, setSearchQuery, selectedCategory, setSelectedCategory, onCreateClick }) => {
+const Header = ({
+  searchQuery,
+  setSearchQuery,
+  selectedCategory,
+  setSelectedCategory,
+  onCreateClick,
+}) => {
   const handleClear = () => setSearchQuery("");
 
   return (
     <header className="header">
       <img src={logo} alt="logo" className="logo" />
-      {/* <h1 className="logo-text">Kudos Board</h1> */}
 
       <div className="search-bar-wrapper">
         <div className="search-container">
@@ -31,16 +35,16 @@ const Header = ({ searchQuery, setSearchQuery, selectedCategory, setSelectedCate
             onChange={(e) => setSearchQuery(e.target.value)}
           />
         </div>
-        <button className = "search" onClick={() => setSearchQuery(searchQuery)}>
-            Search
+        <button className="search" onClick={() => setSearchQuery(searchQuery)}>
+          Search
         </button>
         {searchQuery && (
-            <button className="clear-button" onClick={() => setSearchQuery("")}>
-              Clear
-            </button>
-          )}
-        </div>
-     
+          <button className="clear-button" onClick={handleClear}>
+            Clear
+          </button>
+        )}
+      </div>
+
       <div className="category-buttons">
         {categories.map((cat) => (
           <button
@@ -54,9 +58,13 @@ const Header = ({ searchQuery, setSearchQuery, selectedCategory, setSelectedCate
       </div>
 
       <div className="create-board">
-        <button className="create-board-button" onClick={onCreateClick} > 
-            +  Pin to Board ✎ᝰ...
+        <button className="create-board-button" onClick={onCreateClick}>
+          + Pin to Board ✎ᝰ...
         </button>
+      </div>
+
+      <div className="theme-toggle-wrapper">
+        <ThemeToggle />
       </div>
     </header>
   );

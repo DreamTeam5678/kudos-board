@@ -1,29 +1,28 @@
-
 body, html, #root {
   margin: 0;
   padding: 0;
   width: 100%;
   min-height: 100%;
-  background-color: floralwhite;
-  box-shadow: inset 2px 2px 50px 10px #deb887;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  box-shadow: inset 2px 2px 50px 10px var(--accent-color, #deb887);
 }
 
 body {
-  border:  groove 15px #deb887;
+  border: groove 15px var(--accent-color, #deb887);
   width: 98.3%;
 }
 
 .App {
   display: flex;
   justify-content: center;
-  min-height:100vh;
-  width : 100%;
+  min-height: 100vh;
+  width: 100%;
 }
-
 
 .app-wrapper {
   display: flex;
-  flex:1;
+  flex: 1;
   flex-direction: column;
   min-height: 100vh;
 }

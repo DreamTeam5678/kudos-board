@@ -196,7 +196,8 @@ board-page .board-card {
 
 .board-page {
   padding: 40px 20px;
-  background-color: #fffaf0;
+  background-color: var(--bg-color);
+  color: var(--text-color);
   min-height: 100vh;
   text-align: center;
   font-family: 'Arial', sans-serif;
@@ -206,22 +207,24 @@ board-page .board-card {
   font-size: 2.5rem;
   margin-bottom: 20px;
   font-weight: bold;
+  color: var(--text-color);
 }
 
 .board-page .create-button {
-  background-color: #996e2f;
-  color: white;
+  background-color: var(--accent-color);
+  color: var(--text-color);
   padding: 10px 20px;
-  border: none;
+  border: 2px solid var(--text-color);
   border-radius: 8px;
   font-size: 16px;
   cursor: pointer;
   margin-bottom: 40px;
-  transition: background 0.3s ease;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 .board-page .create-button:hover {
-  background-color: #333;
+  background-color: var(--text-color);
+  color: var(--bg-color);
 }
 
 .board-page .card-grid {
@@ -241,7 +244,10 @@ board-page .board-card {
   transition: transform 0.3s ease;
   font-family: 'Segoe UI', sans-serif;
   position: relative;
-  box-shadow: 15px 15px 15px grey;
+  box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.2);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  border: 1px solid var(--text-color);
 }
 
 .board-page .board-card:hover {
@@ -296,13 +302,13 @@ board-page .board-card {
   font-size: 1.1rem;
   font-weight: 600;
   margin: 5px;
-  color: rgb(65, 64, 64);
+  color: var(--text-color);
   text-decoration: underline;
 }
 
 .board-page .board-card-description {
   font-size: 0.8rem;
-  color: rgb(86, 86, 81);
+  color: var(--text-color);
   margin-top: -8px;
   text-align: center;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -317,7 +323,8 @@ board-page .board-card {
   border-radius: 200px;
   gap: 0.6rem;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  border: 3px dotted floralwhite;
+  border: 3px dotted var(--bg-color);
+  color: var(--text-color);
 }
 
 .board-page .board-card-actions {
@@ -335,7 +342,7 @@ board-page .board-card {
   max-height: 30px;
   background-color: transparent;
   border: none;
-  color: rgb(65, 64, 64);
+  color: var(--text-color);
   border-radius: 500px;
   padding: -12px;
 }
@@ -343,7 +350,7 @@ board-page .board-card {
 .board-page .board-card-button {
   background-color: transparent;
   border: none;
-  color: rgb(65, 64, 64);
+  color: var(--text-color);
   border-radius: 500px;
   padding: 0px;
 }
@@ -365,6 +372,7 @@ board-page .board-card {
   align-items: center;
   gap: 6px;
   font-size: 16px;
+  color: var(--text-color);
 }
 
 .board-page .heart-container .heart-icon {
