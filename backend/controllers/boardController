@@ -77,7 +77,8 @@ exports.createBoard = async (req, res) => {
                 description: req.body.description,
                 image: req.body.image,
                 category: req.body.category,
-                author: req.body.author?.trim() || "Anonymous"
+                author: req.body.author,
+
             },
         });
 
