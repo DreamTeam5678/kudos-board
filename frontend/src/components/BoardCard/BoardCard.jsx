@@ -6,7 +6,7 @@ import trash from '../../assets/trash.png';
 import view from '../../assets/view.png';
 import eye from '../../assets/eye.png';
 
-function BoardCard({ board, onDelete }) {
+function BoardCard({ board, onDelete, onDragStart}) {
 
     const pastels = [
         "#AEC6CF", "#F7C6C7", "#FFD1DC", "#B0E0E6", "#FFCBC1",
@@ -33,6 +33,7 @@ function BoardCard({ board, onDelete }) {
     }
 
 
+    //handles deletion of board from board grid
     const handleDelete = () => {
         if (window.confirm("Are you sure you want to delete this board?")) {
             fetch(`http://localhost:3000/boards/${board.id}`, {
@@ -53,7 +54,10 @@ function BoardCard({ board, onDelete }) {
     };
 
     return (
-        <div className="board-card" style={{
+        <div className="board-card" 
+        draggable="true"
+        onDragStart={(event) => onDragStart(event, board.id)}
+        style={{
             backgroundColor: getRandomPastel(),
             transform: randomTilt(),
             
