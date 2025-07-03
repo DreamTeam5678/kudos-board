@@ -102,3 +102,68 @@
     transform: translateY(0);
   }
 }
+
+.image-results {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+  justify-content: center;
+}
+
+.image-option {
+  width: 120px;
+  height: 90px;
+  object-fit: cover;
+  cursor: pointer;
+  border: 3px solid transparent;
+  border-radius: 6px;
+  transition: transform 0.2s, border 0.2s;
+}
+
+.image-option:hover {
+  transform: scale(1.05);
+}
+
+.image-option.selected {
+  border-color: #ffa726;
+  box-shadow: 0 0 10px rgba(255, 167, 38, 0.6);
+}
+
+.image-option::after {
+  content: "⚠️";
+  font-size: 24px;
+  display: block;
+  text-align: center;
+  line-height: 75px;
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  color: #aaa;
+  visibility: hidden;
+}
+
+.image-option:invalid,
+.image-option[src=""],
+.image-option:not([src]) {
+  visibility: hidden;
+}
+
+.image-option:invalid::after {
+  visibility: visible;
+}
+
+.image-search-group button {
+  padding: 0.6rem 1.25rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  background-color: rgb(137, 96, 34);
+  color: white;
+  transition: background-color 0.3s ease;
+  margin-left: 4px; 
+}
+
+.image-search-group button:hover {
+  background-color: #8b5c1f;
+}
