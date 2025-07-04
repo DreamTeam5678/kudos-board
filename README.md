@@ -85,18 +85,18 @@ Deployed Application (optional): [Kudos Board Deployed Site](https://kudos-board
 
 - [X] **Deployment**
   - [X] Website is deployed via Render.
-- [ ] **Comments**
-  - [ ] Users can add comments to cards.
-  - [ ] To successfully add a comment, users must specify a text message body.
-  - [ ] Users are given the option to specify the author of the comment.
-  - [ ] Users can view comments on card in a pop-up modal that displays the card's:
-    - [ ] Text message 
-    - [ ] Gif
-    - [ ] Author (if specified)
-    - [ ] A list of the card's comments and each comment's:
-      - [ ] Message body
-      - [ ] Author (if specified)
-  - [ ] Users can add multiple comments to a single card.
+- [x] **Comments**
+  - [x] Users can add comments to cards.
+  - [x] To successfully add a comment, users must specify a text message body.
+  - [x] Users are given the option to specify the author of the comment.
+  - [x] Users can view comments on card in a pop-up modal that displays the card's:
+    - [x] Text message 
+    - [x] Gif
+    - [x] Author (if specified)
+    - [x] A list of the card's comments and each comment's:
+      - [x] Message body
+      - [x] Author (if specified)
+  - [x] Users can add multiple comments to a single card.
 - [ ] **Dark Mode** 
   - [ ] Users can toggle between light mode and dark mode using a button displayed on the:
     - [ ] Home Page
@@ -144,13 +144,7 @@ Deployed Application (optional): [Kudos Board Deployed Site](https://kudos-board
 `TODO://` Add the embedded URL code to your animated app walkthrough below, `ADD_EMBEDDED_CODE_HERE`. Make sure the video or gif actually renders and animates when viewing this README. Ensure your walkthrough showcases the presence and/or functionality of all features you implemented above (check them off as you film!). Pay attention to any **VIDEO WALKTHROUGH SPECIAL INSTRUCTIONS** checkboxes listed above to ensure graders see the full functionality of your website! (🚫 Remove this paragraph after adding walkthrough video)
 
 This is Our Walkthrough Video
-`<div>
-    <a href="https://www.loom.com/share/0229a0f8f89245aea3bc07373f31f5f6">
-    </a>
-    <a href="https://www.loom.com/share/0229a0f8f89245aea3bc07373f31f5f6">
-      <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/0229a0f8f89245aea3bc07373f31f5f6-7d9a9564cbafc12b-full-play.gif">
-    </a>
-  </div>`
+`<div style="position: relative; padding-bottom: 64.63195691202873%; height: 0;"><iframe src="https://www.loom.com/embed/3422dfeb0d404138b0ca50bd0e72985e?sid=8370f4a4-fedd-45a5-b932-1f3b36ddcb76" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>`
 
 ### Reflection
 
