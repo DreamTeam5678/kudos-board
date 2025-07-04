@@ -144,7 +144,7 @@ Deployed Application (optional): [Kudos Board Deployed Site](https://kudos-board
 `TODO://` Add the embedded URL code to your animated app walkthrough below, `ADD_EMBEDDED_CODE_HERE`. Make sure the video or gif actually renders and animates when viewing this README. Ensure your walkthrough showcases the presence and/or functionality of all features you implemented above (check them off as you film!). Pay attention to any **VIDEO WALKTHROUGH SPECIAL INSTRUCTIONS** checkboxes listed above to ensure graders see the full functionality of your website! (🚫 Remove this paragraph after adding walkthrough video)
 
 This is Our Walkthrough Video
-`<div style="position: relative; padding-bottom: 64.63195691202873%; height: 0;"><iframe src="https://www.loom.com/embed/3422dfeb0d404138b0ca50bd0e72985e?sid=8370f4a4-fedd-45a5-b932-1f3b36ddcb76" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>`
+https://www.loom.com/share/3422dfeb0d404138b0ca50bd0e72985e?sid=3cd58fe5-cf93-42ec-b069-443553925219
 
 ### Reflection
 
