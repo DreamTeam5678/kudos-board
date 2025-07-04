@@ -1,0 +1,38 @@
+const express = require("express");
+const router = express.Router({ mergeParams: true });
+const { PrismaClient } = require("@prisma/client");
+const prisma = new PrismaClient();
+
+router.get("/:cardId/comments", async (req, res) => {
+  const cardId = parseInt(req.params.cardId);
+  try {
+    const comments = await prisma.comment.findMany({
+      where: { cardId },
+      orderBy: { createdAt: "desc" },
+    });
+    res.json(comments);
+  } catch (error) {
+     console.error("GET comments error:", error);
+    res.status(500).json({ error: "Error fetching comments" });
+  }
+});
+
+router.post("/:cardId/comments", async (req, res) => {
+  const cardId = parseInt(req.params.cardId);
+  const { message, author } = req.body;
+  try {
+    const comment = await prisma.comment.create({
+      data: {
+        message,
+        author,
+        card: { connect: { id: cardId } },
+      },
+    });
+    res.json(comment);
+  } catch (error) {
+     console.error("POST comments error:", error);
+    res.status(500).json({ error: "Error creating comment" });
+  }
+});
+
+module.exports = router;
