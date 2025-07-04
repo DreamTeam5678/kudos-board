@@ -1,50 +1,27 @@
-const express = require('express')
-const cors = require('cors')
-const app = express()
-const PORT = 3000
+const express = require('express');
+const cors = require('cors');
 const { PrismaClient } = require('@prisma/client');
-const prisma = new PrismaClient();
 
+const app = express();
+const prisma = new PrismaClient();
+const PORT = 3000;
+
+// Routes
 const boardsRouter = require('./routes/boards');
 const boardCardsRouter = require('./routes/boardCards');
+const commentRoutes = require('./routes/comments'); // NEW
+
+app.use(cors());
 app.use(express.json());
-app.use(cors())
-app.use(express.json())
-app.listen(PORT, () => {
-    console.log(`Server running on port http://localhost:${PORT}`)
-})
+
 app.get('/', (req, res) => {
-    res.send("Yay our backend is working! ")
-})
+  res.send("Yay our backend is working!");
+});
 
 app.use('/boards', boardsRouter);
 app.use('/boards', boardCardsRouter);
+app.use('/cards', commentRoutes);
 
-
-
-/*app.get('/api/boards', async (req, res) => {
-  try {
-    const boards = await prisma.board.findMany({
-      include: { cards: true },
-    });
-    res.json(boards);
-  } catch (error) {
-    console.error("Error fetching boards:", error);
-    res.status(500).json({ error: "Failed to fetch boards" });
-  }
+app.listen(PORT, () => {
+  console.log(`Server running at http://localhost:${PORT}`);
 });
-
-app.get('/api/boards/:id', async (req, res) => {
-  const { id } = req.params;
-  try {
-    const board = await prisma.board.findUnique({
-      where: { id: parseInt(id) },
-      include: { cards: true },
-    });
-    res.json(board);
-  } catch (err) {
-    console.error(err);
-    res.status(500).json({ error: "Board not found" });
-  }
-}); */
-
