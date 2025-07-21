@@ -24,5 +24,5 @@ app.use('/boards', boardCardsRouter);
 app.use('/cards', commentRoutes);
 
 app.listen(PORT, () => {
-  console.log(`Server running at http://localhost:${PORT}`);
+  console.log(`Server running at http://localhost:${PORT} or in production`);
 });
