@@ -2,7 +2,7 @@
 
 Submitted by: **Pamela Mensah, Lauritz Henderson, and Senaf Geleta**
 
-Deployed Application (optional): [Kudos Board Deployed Site](https://kudos-board-1-r3pc.onrender.com/)
+Deployed Application (optional): [Kudos Board Deployed Site](https://kudos-board3.onrender.com/)
 
 ### Application Features
 
