@@ -19,7 +19,6 @@ const Header = ({ searchQuery, setSearchQuery, selectedCategory, setSelectedCate
   return (
     <header className="header">
       <img src={logo} alt="logo" className="logo" />
-      {/* <h1 className="logo-text">Kudos Board</h1> */}
 
       <div className="search-bar-wrapper">
         <div className="search-container">

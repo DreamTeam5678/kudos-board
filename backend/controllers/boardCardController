@@ -71,17 +71,25 @@ exports.updateBoardCard = async (req, res) => {
 
 // Delete a board card
 exports.deleteBoardCard = async (req, res) => {
-    const { cardId } = req.params;
-    try {
-        const deletedBoardCard = await prisma.card.delete({
-            where: { id: parseInt(cardId) },
-        });
-        res.json(deletedBoardCard);
-    } catch (error) {
-        console.error('Error deleting board card:', error);
-        res.status(500).json({ error: 'Failed to delete board card' });
-    }
-};  
+  const { cardId } = req.params;
+  try {
+    // First delete all comments linked to this card
+    await prisma.comment.deleteMany({
+      where: { cardId: parseInt(cardId) },
+    });
+
+    // Then delete the card itself
+    const deletedBoardCard = await prisma.card.delete({
+      where: { id: parseInt(cardId) },
+    });
+
+    res.status(200).json(deletedBoardCard);
+  } catch (error) {
+    console.error("Error deleting board card:", error);
+    res.status(500).json({ error: "Failed to delete card" });
+  }
+};
+
 
 // Upvote a board card
 exports.upvoteBoardCard = async (req, res) => {

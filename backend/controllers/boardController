@@ -1,3 +1,4 @@
+
 const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient();
 
@@ -39,7 +40,6 @@ exports.getBoards = async (req, res) => {
         include: { cards: true },
       });
     } else {
-      // Default: return all boards
       boards = await prisma.board.findMany({
         include: { cards: true },
       });

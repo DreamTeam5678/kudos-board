@@ -5,6 +5,7 @@ import BoardCard from '../BoardCard/BoardCard';
 import { useState, useEffect } from 'react';
 import TrashCan from '../TrashCan/TrashCan';
 
+const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 
 
@@ -26,7 +27,7 @@ function BoardGrid({boards = []}) {
     //handles deletion of board to trash can
     const handleDropFromTrash = (boardId) => {
         if (window.confirm("Are you sure you want to delete this board?")) {
-            fetch(`http://localhost:3000/boards/${boardId}`, {
+            fetch(`${BASE_URL}/boards/${boardId}`, {
                 method: "DELETE",
                 headers: {
                     "Content-Type": "application/json",

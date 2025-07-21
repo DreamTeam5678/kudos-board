@@ -5,6 +5,8 @@ import pin from '../../assets/pin.png';
 import trash from '../../assets/trash.png';
 import view from '../../assets/view.png';
 import eye from '../../assets/eye.png';
+const BASE_URL = import.meta.env.VITE_API_BASE_URL;
+
 
 function BoardCard({ board, onDelete, onDragStart}) {
 
@@ -36,7 +38,7 @@ function BoardCard({ board, onDelete, onDragStart}) {
     //handles deletion of board from board grid
     const handleDelete = () => {
         if (window.confirm("Are you sure you want to delete this board?")) {
-            fetch(`http://localhost:3000/boards/${board.id}`, {
+            fetch(`${BASE_URL}/boards/${board.id}`, {
                 method: "DELETE",
                 headers: {
                     "Content-Type": "application/json",

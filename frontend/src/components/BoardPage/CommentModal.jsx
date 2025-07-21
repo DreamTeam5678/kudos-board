@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./CommentModal.css";
+const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 const CommentModal = ({ card, onClose }) => {
   const [comments, setComments] = useState([]);
@@ -10,7 +11,7 @@ const CommentModal = ({ card, onClose }) => {
     if (!card?.id) return;
 
     // ✅ Call your backend directly
-    fetch(`http://localhost:3000/cards/${card.id}/comments`)
+    fetch(`${BASE_URL}/boards/${card.id}/comments`)
       .then((res) => {
         if (!res.ok) throw new Error("Failed to fetch comments");
         return res.json();
@@ -24,7 +25,7 @@ const CommentModal = ({ card, onClose }) => {
     if (!message.trim()) return;
 
     try {
-      const res = await fetch(`http://localhost:3000/cards/${card.id}/comments`, {
+      const res = await fetch(`${BASE_URL}/boards/${card.id}/comments`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ message, author: author || "Anonymous" }),

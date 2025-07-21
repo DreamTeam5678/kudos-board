@@ -5,6 +5,7 @@ import BoardCard from "../BoardCard/BoardCard";
 import axios from "axios";
 import "./Home.css";
 import CreateBoardForm from "../CreateBoardForm/CreateBoardForm";
+const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 const Home = () => {
   const [boards, setBoards] = useState([]);
@@ -16,7 +17,7 @@ const Home = () => {
   // Initial fetch
   const fetchBoards = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/boards", {
+      const res = await axios.get(`${BASE_URL}/boards`,{
         params : {
           category: selectedCategory
         }

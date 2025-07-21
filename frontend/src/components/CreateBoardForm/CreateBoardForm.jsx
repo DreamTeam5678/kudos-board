@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./CreateBoardForm.css";
+const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 const CreateBoardForm = ({ onCreate, onClose }) => {
   const [formData, setFormData] = useState({
@@ -49,7 +50,7 @@ const CreateBoardForm = ({ onCreate, onClose }) => {
 
     try {
       console.log("Submitting board:", formData);
-      const res = await fetch("http://localhost:3000/boards", {
+      const res = await fetch(`${BASE_URL}/boards`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

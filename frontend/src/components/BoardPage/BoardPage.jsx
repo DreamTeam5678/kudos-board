@@ -4,6 +4,7 @@ import CreateCardForm from "./CreateCardForm";
 import "./BoardPage.css";
 import CardItem from "./CardItem";
 const GIPHY_API_KEY = "jKqO4xyMXqOJhKNVdfYCwohtHEj1q255";
+const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 const BoardPage = () => {
   const { id } = useParams();
@@ -15,7 +16,7 @@ const BoardPage = () => {
  
   const fetchBoard = async () => {
     try {
-      const res = await fetch(`http://localhost:3000/boards/${id}`);
+      const res = await fetch(`${BASE_URL}/boards/${id}`)
       const json = await res.json();
       setBoard(json);
       setCards(json.cards || []);
@@ -38,7 +39,7 @@ const BoardPage = () => {
 
   const handleUpvote = async (cardId) => {
     try {
-      const res = await fetch(`http://localhost:3000/boards/${id}/cards/${cardId}/upvote`, {
+      const res = await fetch(`${BASE_URL}/boards/${id}/cards/${cardId}/upvote`, {
         method: "POST",
       });
       if (!res.ok) throw new Error("Failed to upvote");
@@ -53,7 +54,7 @@ const BoardPage = () => {
 
   const handleDelete = async (cardId) => {
     try {
-      const res = await fetch(`http://localhost:3000/boards/${id}/cards/${cardId}`, {
+      const res = await fetch(`${BASE_URL}/boards/${id}/cards/${cardId}`, {
         method: "DELETE",
       });
       if (!res.ok) throw new Error("Failed to delete card");
@@ -65,7 +66,7 @@ const BoardPage = () => {
 
   const handleCreate = async (newCard) => {
     try {
-      const res = await fetch(`http://localhost:3000/boards/${id}/cards`, {
+      const res = await fetch(`${BASE_URL}/boards/${id}/cards`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
